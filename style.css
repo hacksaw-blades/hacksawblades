@@ -1,0 +1,651 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    font-family: Comfortaa;
+  }
+  @font-face {
+    font-family: 'Roboto';
+    src: url('Roboto.woff2') format('woff2');
+    font-display: swap;
+  }
+  .navbar-cont{
+    width:100%;
+    position:sticky;
+    z-index:100;
+    top:0;
+    /* padding:10px; */
+    background:rgb(255,255,255);
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items:center;
+    border:1px solid rgb(231,231,235);
+  }
+  label{
+    margin:0px 0px 0px 0px;
+    padding:4px 0px 0 0px;
+  }
+  input{
+    width:100%;
+    margin-top:5px;
+    border: 1px solid #ccc;
+    border-radius:4px;
+    padding:13px;
+    color: black;
+    background-color: white;
+  }
+  input:focus-visible, textarea:focus-visible, select:focus-visible{
+    border: 1px solid #403f2d;
+    outline-color: #403f2d;
+    outline-style: auto;
+    outline-width: 1px;
+  }
+  textarea{
+    width:100%;
+    margin-top:5px;
+    border: 1px solid #ccc;
+    border-radius:4px;
+    padding:13px;
+    color: black;
+    background-color: white;
+  }
+  select{
+    width:100%;
+    margin-top:5px;
+    border: 1px solid #ccc;
+    border-radius:4px;
+    padding:13px;
+    color: black;
+    height: 43px;
+    background-color: white;
+  }
+  option{
+    color: grey;
+    background-color: white;
+  }
+  .nav-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    flex-direction: row;
+    padding: 10px;
+  }
+  a{
+    text-decoration:none;
+    color:#403f2d;
+  }
+
+  .a-text>a{
+    text-decoration:none;
+    color:white;
+  }
+  .learn-more{
+    color:white;
+    padding:15px 25px 15px 25px;
+    background:#403f2d;
+    border:1px solid white;
+    font-size:20px;
+    border-radius:30px;
+  }
+  .services{
+    padding:100px 50px;
+    text-align:center;
+  }
+  .services-box{
+    width:100%;
+    display:flex;
+    margin:auto;
+    justify-content:space-between;
+    flex-wrap: wrap;
+  }
+  .service-info{
+    margin:20px 0px 20px 0px;
+  }
+  .service-cont{
+    display:flex;
+    margin:10px 30px;
+    flex-direction:column;
+    align-items:center;
+    white-space: nowrap;
+  }
+  .service-desc{
+    width:100%;
+    line-height:2em;
+    text-align:center;
+    color:#403f2d;
+    font-size:18px;
+  }
+  .contact{
+    position:relative;
+    background: #ffae15;
+  }
+  .igiuzk>a{
+    margin-right:10px;
+  }
+  .copyright-footer{
+    padding:25px;
+    border:1px solid rgb(231,231,235);
+    text-align:center;
+  }
+  #iy2lbi{
+    font-size:15px;
+    color: white;
+  }
+  .i78bq-2-3{
+    margin:0px 0px 30px 0px;
+    align-self: center;
+  }
+  #iqrh3-2-2{
+    color:#403f2d;
+    font-size:36px;
+    font-weight:700;
+  }
+  .iyohgi{
+    margin:0 0px 0px 0px;
+    padding: 50px;
+  }
+
+  span{
+    font-size: 18px;
+  }
+
+  /* collapsible FAQs css start */
+  /* Style the button that is used to open and close the collapsible content */
+  .collapsible {
+    background-color: #eee;
+    color: #403f2d;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    background-color: #ccc;
+    color: #403f2d;
+  }
+
+  .active {
+    margin-bottom: 0px;
+    color: #ffffff;
+  }
+
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    padding: 18px 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    margin-bottom: 20px;
+    color: #403f2d;
+  }
+  /* collapsible css ends */
+
+  .header-font-size{
+    font-size: 20px;
+  }
+
+  .flex-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .row-div{
+    flex-direction: row;
+  }
+
+  .col-div{
+    flex-direction: column;
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 5px; /* 5px rounded corners */
+  }
+  /* Add rounded corners to the top left and the top right corner of the image */
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+
+  .process-cards{
+    min-width: 200px;
+    max-width: 530px;
+    /* height: 50px; */
+    padding: 10px;
+    text-align: center;
+    background-color: #ffae15;
+  }
+
+  #customer-form{
+    padding: 20px;
+    background: whitesmoke;
+    font-size: 14px;
+    color: black;
+    border-radius: 10px;
+    height: 480px;
+    width: 30%;
+    border: 2px solid black;
+  }
+
+  input[type="date"]{
+    position: relative;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .row-div{
+    flex-direction: row;
+    top: 0;
+    width: auto;
+  }
+
+  #submit-btn{
+    width: -webkit-fill-available;
+    height: 35px;
+    margin-top: 15px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 800;
+    border: 1px solid black;
+    background-color: #403f2d;
+    cursor: pointer;
+  }
+
+  #submit-btn:disabled{
+    border: #777659;
+    background-color: #777659;
+    cursor: not-allowed;
+  }
+
+  .contact-details{
+    color: #403f2d;
+  }
+
+  /* .border-bottom-class{
+    border-bottom: solid #000000;
+  } */
+
+  .service-desc>li{
+    text-align: left;
+    font-size: 12px;
+  }
+
+  ul{
+    padding: 0px;
+  }
+
+  #our-team-content{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #cards-content{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .inquire-tos-content{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  #city-section-content{
+    display: flex;
+    gap: 35px;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  /* modal css starts*/
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 250px;
+    height: 200px;
+    gap: 30px;
+    border-radius: 10px;
+  }
+  /* modal css ends */
+
+  /* carousal css starts */
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1000px;
+    /* position: relative; */
+    margin: auto;
+  }
+
+  /* Hide the images by default */
+  .slides {
+    display: none;
+  }
+
+  /* Caption text */
+  .text {
+    color: #403f2d;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 8px 12px;
+    /* position: absolute; */
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .slides-text {
+    color: #403f2d;
+    font-weight: 700;
+    font-size: x-large;
+    padding: 8px 12px;
+    /* position: absolute; */
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot, .day-night-dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active, .dot:hover, .day-night-dot:hover {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  /* table css */
+  table {
+    border-collapse: collapse;
+    border: 1px solid;
+    width: 100%;
+    border-radius: 5px;
+  }
+  td, tr {
+    padding: 15px;
+    text-align: left;
+  }
+  /* table css ends */
+
+  /* scroll bar css */
+  ::-webkit-scrollbar {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    background-color: #bbb5b5;
+    border-radius: 20px;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 0.3rem;
+    height: 0.3rem;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 20px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #bbb5b5;
+    border-radius: 10px;
+    outline: none;
+  }
+  /* scroll bar css ends */
+
+  #contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: row;
+  }
+
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  /* carousal css end */
+
+  @media (max-width: 992px){
+    #customer-form{
+      width: 30%;
+    }
+    /* .nav-inner{
+      width:90%;
+      justify-content:space-between;
+    } */
+    /* .navbar-cont{
+      padding:15px 0px;
+    } */
+    .learn-more{
+      padding:10px 18px 10px 18px;
+    }
+    .service-info{
+      margin:20px 0px 57px 0px;
+    }
+    .fill-form-img-div>img{
+      width: 500px;
+      object-fit: cover;
+    }
+  }
+  @media (max-width:768px){
+    #customer-form{
+      width: 40%;
+    }
+    .fill-form-img-div>img{
+      width: 275px;
+      object-fit: cover;
+    }
+    #our-team-content, #cards-content, .inquire-tos-content{
+      gap: 30px;
+      justify-content: center;
+    }
+  }
+  @media (max-width: 575px){
+    .pages {
+      display: none;
+    }
+    /* .nav-inner{
+      flex-direction: column;
+      gap: 20px;
+    } */
+    #contact-info {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .process-cards{
+      align-self: center !important;
+    }
+    #our-team-content, #cards-content, .inquire-tos-content{
+      flex-direction: column;
+      gap: 30px;
+      justify-content: center;
+    }
+    .service-cont{
+      white-space: unset;
+    }
+    .fill-form-img-div>img{
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .max-width-content{
+      display: none;
+    }
+    .learn-more{
+      padding:7px 18px 7px 18px;
+    }
+    #customer-form{
+      right:7%;
+      height:auto;
+      width: 100%;
+    }
+    .services{
+      padding:60px 15px 80px 15px;
+    }
+    .service-desc{
+      width:97%;
+    }
+    .iyohgi{
+      width:100%;
+    }
+    .contact-details{
+      /* line-break: anywhere; */
+    }
+  }
+  @media (max-width: 460px){
+    .pages{
+      display: none;
+    }
+    .heading{
+      font-size: 18px;
+    }
+    .nav-inner{
+      /* width:90%; */
+      flex-direction: column;
+      gap: 20px;
+    }
+    #contact-info {
+      flex-direction: row;
+      gap: 10px;
+    }
+    .fill-form-img-div>img, .slideImg{
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .contact-details{
+      /* line-break: anywhere; */
+    }
+    #logo{
+      height: 50px;
+    }
+    .igiuzk{
+      flex-direction: column;
+    }
+    .iyohgi{
+      padding: 20px;
+    }
+    .header-font-size{
+      font-size: 16px;
+    }
+    #cards-content, .inquire-tos-content{
+      flex-direction: column;
+      gap: 30px;
+      justify-content: center;
+    }
+  }
+  @media (max-width: 290px){
+    .pages{
+      display: none;
+    }
+    .heading{
+      font-size: 14px;
+    }
+    .nav-inner{
+      /* width:90%; */
+      flex-direction: column;
+      gap: 20px;
+    }
+    #contact-info {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .fill-form-img-div>img, .slideImg{
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .process-card-parent{
+      padding: 5px !important;
+    }
+    .contact-details{
+      /* line-break: anywhere; */
+    }
+    #logo{
+      height: 50px;
+    }
+    .igiuzk{
+      flex-direction: column;
+    }
+    .iyohgi{
+      padding: 20px;
+    }
+    .header-font-size{
+      font-size: 16px;
+    }
+    #cards-content, .inquire-tos-content{
+      flex-direction: column;
+      gap: 30px;
+      justify-content: center;
+    }
+  }
+  
