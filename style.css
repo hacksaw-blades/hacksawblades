@@ -118,7 +118,6 @@
   }
   .contact{
     position:relative;
-    background: #ffae15;
   }
   .igiuzk>a{
     margin-right:10px;
@@ -289,10 +288,6 @@
     color: #403f2d;
   }
 
-  /* .border-bottom-class{
-    border-bottom: solid #000000;
-  } */
-
   .service-desc>li{
     text-align: left;
     font-size: 12px;
@@ -361,9 +356,9 @@
   /* carousal css starts */
   /* Slideshow container */
   .slideshow-container {
-    max-width: 1000px;
+    /* max-width: 1000px; */
     /* position: relative; */
-    margin: auto;
+    /* margin: auto; */
   }
 
   /* Hide the images by default */
@@ -371,18 +366,12 @@
     display: none;
   }
 
-  /* Caption text */
-  .text {
-    color: #403f2d;
-    font-weight: 700;
-    font-size: 15px;
-    padding: 8px 12px;
-    /* position: absolute; */
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
+  .slideImg {
+    width: -webkit-fill-available;
+    object-fit: cover;
   }
 
+  /* Caption text */
   .slides-text {
     color: #403f2d;
     font-weight: 700;
@@ -392,10 +381,11 @@
     bottom: 8px;
     width: 100%;
     text-align: center;
+    display: none;
   }
 
   /* The dots/bullets/indicators */
-  .dot, .day-night-dot {
+  .slides-dot, .day-night-dot {
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -406,7 +396,7 @@
     transition: background-color 0.6s ease;
   }
 
-  .active, .dot:hover, .day-night-dot:hover {
+  .active, .slides-dot:hover, .day-night-dot:hover {
     background-color: #717171;
   }
 

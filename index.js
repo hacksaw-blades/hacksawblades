@@ -9,6 +9,22 @@ function getPathAndLocation() {
 
 const { finalPath, isPage } = getPathAndLocation();
 
+function showModal() {
+  const modal = document.getElementById("modal");
+  modal.style.display = "block";
+}
+
+function closeModal() {
+  const modal = document.getElementById("modal");
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+}
+
 function processFormSubmission(e) {
   e.preventDefault(); //prevent page reload on submitting form
   validateDateField(); //if date validation fails then onSubmit will not execute further
@@ -55,6 +71,11 @@ function callAPI(formEle, submitBtn) {
     });
 }
 
+function currentSlide(slideClassName, dotClassName, slideIndex) {
+  clearTimeout(slidesTimeout);
+  showSlides(slideClassName, dotClassName, slideIndex);
+}
+
 function showSlides(slideClassName, dotClassName, slideIndex) {
   let i;
   let slides = document.getElementsByClassName(slideClassName);
@@ -71,58 +92,28 @@ function showSlides(slideClassName, dotClassName, slideIndex) {
   }
   if (slides[slideIndex - 1]) slides[slideIndex - 1].style.display = "block";
   if (dots[slideIndex - 1]) dots[slideIndex - 1].className += " active";
-  setTimeout(function () {
+  slidesTimeout = setTimeout(function () {
     return showSlides(slideClassName, dotClassName, slideIndex);
   }, 2000); // Change image every 2 seconds
 }
 
 function getAboutUsContent(isPage) {
   return `
-    <div id="about-us" class="contact border-bottom-class" style="background: #65b2d1;">
+    <div id="about-us" class="contact" style="background: #7f8060;">
       <div class="iyohgi" style="text-align: center;">
-        <h1 class="i78bq-2-3 contact-details">About Us - Shree Paramhans Enterprises</h1>
+        <h1 class="i78bq-2-3">About Us - Shree Paramhans Enterprises</h1>
         <div id="city-section-content">
           <div class="fill-form-img-div" style="align-self: center;">
             <img alt="" loading="lazy" width="400px" height="auto" src=${
               isPage ? "../assets/ABOUTUS.jpg" : "assets/ABOUTUS.jpg"
             }></img>
           </div>
-          <div class="contact-details" style="text-align: left;">
-            <p>Welcome to Shree Paramhans Enterprises, your trusted partner for all your moving needs. With years of experience in the industry, we have established ourselves as a reliable and professional moving company dedicated to providing top-notch moving and packing services.</p><br /><br />
-            <p style="margin-bottom: 5px; font-size: 22px;">
-              <b>Our Mission</b><br />
-            </p>
-            <p>Our mission is to make your moving experience as smooth and stress-free as possible. We understand that moving can be a daunting task, and our goal is to handle every aspect of your move with care and efficiency. From the moment you contact us to the final delivery at your new location, we strive to exceed your expectations with our commitment to excellence.</p><br /><br />
-            <p style="margin-bottom: 5px; font-size: 22px;">
-              <b>Our Services</b><br />
-            </p>  
-            <p>At Shree Paramhans Enterprises, we offer a comprehensive range of moving services to cater to your specific needs:
+          <div style="text-align: left;">
+            <p>Welcome to Shree Paramhans Enterprises, a renowned leader in the manufacturing of premium hacksaw blades. With ${new Date().getFullYear() - new Date('1998-06-20').getFullYear()} years of industry expertise, we specialize in designing and producing high-quality blades crafted from top-grade materials like high-carbon steel and bi-metal alloys. Our blades are engineered for precision cutting in various applications, ensuring durability and efficiency.</p><br /><br />
+            <p>Based in Bhiwani, Haryana, we serve a global clientele across industries such as construction, automotive, and manufacturing. Our state-of-the-art manufacturing facility employs advanced technology and strict quality control measures to guarantee superior products that exceed customer expectations. Whether you need blades for heavy-duty industrial use or intricate workshop tasks, Shree Paramhans Enterprises provides reliable solutions tailored to your specific requirements.</p><br /><br />
+             
+            <p>At Shree Paramhans Enterprises, customer satisfaction is our priority. We offer personalized service, quick turnaround times, and competitive pricing to meet your business needs. Explore our comprehensive range of hacksaw blades and experience the difference in performance and longevity. Contact us today to discuss how we can support your cutting operations with our expertise and commitment to excellence.
             </p><br />
-            <p><b>Residential Moving:</b> Whether you're moving across the street or across the country, our professional movers ensure your belongings are transported safely and securely.<br /><br />
-  
-            <b>Commercial Moving:</b> We specialize in office and business relocations, minimizing downtime and ensuring a smooth transition for your company.<br /><br />
-  
-            <b>Packing Services:</b> Our expert packers use high-quality materials and techniques to protect your items during transit. We offer full and partial packing services tailored to your needs.<br /><br />
-  
-            <b>Storage Solutions:</b> Need storage before, during, or after your move? Our secure storage facilities provide short-term and long-term solutions for your belongings.<br /><br />
-  
-            <b>Long-Distance Moving:</b> Moving to a different state? Our experienced movers handle all the logistics of long-distance moves, ensuring your possessions arrive on time and in perfect condition.<br /><br />
-  
-            <b>Local Moving:</b> Our local moving services are designed to make your move within the city or region hassle-free and efficient.</p><br /><br />
-  
-              <p style="margin-bottom: 5px; font-size: 22px;"><b>Why Choose Us?</b><br /></p>
-  
-              <p>Choosing Shree Paramhans Enterprises means choosing a team of experienced movers who are dedicated to providing exceptional service. Here are a few reasons why our customers trust us with their moves:<br /><br />
-  
-              <b>Professionalism:</b> Our movers are trained professionals who handle your belongings with the utmost care and respect.<br /><br />
-  
-              <b>Reliability:</b> We pride ourselves on being a reliable moving company that you can count on to show up on time and deliver as promised.<br /><br />
-  
-              <b>Experience:</b> With years of experience in the moving industry, we have the knowledge and expertise to handle moves of all sizes and complexities.<br /><br />
-  
-              <b>Customer Satisfaction:</b> Our top priority is customer satisfaction. We go above and beyond to ensure that our clients are happy with our services from start to finish.<br /><br />
-  
-              <b>Transparent Pricing:</b> We offer competitive and transparent pricing with no hidden fees. Our detailed quotes provide a clear understanding of the costs involved.<br />
   
           </div>
         </div>
@@ -133,88 +124,40 @@ function getAboutUsContent(isPage) {
 
 function getBlogsContent(isPage) {
   return `
-    <div id="blogs" class="contact border-bottom-class" style="background: #ffffff;">
+    <div id="blogs" class="contact" style="background: #7f8060;">
       <div class="iyohgi" style="text-align: center;">
-        <h1 class="i78bq-2-3 contact-details">Blogs</h1>
+      <h1 class="i78bq-2-3">Choosing the Best Hacksaw Blades for Your Cutting Needs</h1>
         <div id="city-section-content">
           <div class="fill-form-img-div" style="align-self: center;">
             <img alt="" loading="lazy" width="400px" height="auto" src=${
               isPage ? "../assets/BLOG.jpg" : "assets/BLOG.jpg"
             }></img>
           </div>
-          <div class="contact-details" style="text-align: left;">
-            <p style="margin-bottom: 5px; font-size: 22px;">
-              <b>1. The Ultimate Moving Checklist: Everything You Need to Know</b><br />
-            </p>
+          <div style="text-align: left;">
             <p>
-            Moving can be a daunting task, but with the right preparation, it can be a smooth and stress-free experience. Here’s the ultimate moving checklist to ensure you don’t miss a thing.<br /><br /><br />
-            <ul style="line-height: 2.0em; padding-left: 25px;">
-            <li><span><b>Eight Weeks Before Moving:</b></span> Start decluttering your home and decide what to keep, sell, or donate. Begin researching professional movers and get quotes.</li>          
-            <li><span><b>Six Weeks Before Moving:</b></span> Gather packing supplies such as boxes, bubble wrap, and tape. Start packing items you don’t use daily.</li>          
-            <li><span><b>Four Weeks Before Moving:</b></span> Confirm your moving date with the moving company. Arrange for packing services if needed.</li>
-            <li><span><b>Two Weeks Before Moving:</b></span> Notify utility companies of your move. Pack an essentials box with items you’ll need immediately after moving.</li>
-            <li><span><b>Moving Day:</b></span> Do a final walk-through of your home to ensure nothing is left behind. Supervise the movers and double-check the inventory list.</li><br />
-            </ul>
-            </p>
-            <p style="margin-bottom: 5px; font-size: 22px;">
-              <b>2. Top 10 Packing Tips for a Stress-Free Move</b><br />
-            </p>
+            Are you looking for reliable hacksaw blades that deliver precision and durability? At Shree Paramhans Enterprises, we understand the importance of selecting the right tools for your cutting tasks. Our range of high-quality hacksaw blades, crafted from premium materials, ensures superior performance in cutting metals, plastics, and more. Whether you're in an industrial facility or a commercial workshop, our blades are designed to meet diverse needs with efficiency and reliability. Explore our guide to choosing the best hacksaw blades for optimal results in your operations.
+            </p><br /><br />
             <p>
-            Packing is one of the most critical aspects of moving. With these top 10 packing tips, you can ensure your belongings are safe and organized.<br /><br /><br />
+            <h3>Choosing the Best Hacksaw Blades for Your Cutting Needs</h3><br /><br />
             <ul style="line-height: 2.0em; padding-left: 25px;">
-            <li><span><b>Start Early:</b></span> Begin packing well in advance to avoid last-minute stress.</li>
-            <li><span><b>Use Quality Packing Materials:</b></span> Invest in sturdy boxes, bubble wrap, and packing tape to protect your items.</li>
-            <li><span><b>Label Everything:</b></span> Clearly label each box with its contents and the room it belongs to.</li>
-            <li><span><b>Pack Room by Room:</b></span> Focus on packing one room at a time to stay organized.</li>
-            <li><span><b>Keep Essentials Accessible:</b></span> Pack a separate bag with essentials such as toiletries, medications, and important documents.</li>
-            <li><span><b>Use Wardrobe Boxes:</b></span> These are perfect for transporting clothes without wrinkling them.</li>
-            <li><span><b>Protect Fragile Items:</b></span> Use plenty of padding and mark boxes with fragile items clearly.</li>
-            <li><span><b>Don’t Overpack Boxes:</b></span> Ensure boxes are not too heavy to lift and won’t break under the weight.</li>
-            <li><span><b>Seal Boxes Properly:</b></span> Use packing tape to securely seal each box.</li>
-            <li><span><b>Hire Professional Packers:</b></span> Consider hiring professional packers if you’re short on time or have valuable items.</li><br />
-            </ul>
-            </p>
-            <p style="margin-bottom: 5px; font-size: 22px;">
-              <b>3. How to Choose the Right Moving Company</b><br />
-            </p>
-            <p>
-            Selecting the right moving company can make all the difference in your moving experience. Here’s how to choose a reliable mover.<br /><br /><br />
-            <ul style="line-height: 2.0em; padding-left: 25px;">
-            <li><span><b>Research and Recommendations:</b></span> Ask friends and family for recommendations and read online reviews.</li>
-            <li><span><b>Check Credentials:</b></span> Ensure the moving company is licensed and insured.</li>
-            <li><span><b>Get Multiple Quotes:</b></span> Obtain estimates from several moving companies to compare prices and services.</li>   
-            <li><span><b>Understand the Services Offered:</b></span> Make sure the company provides the services you need, such as packing, storage, or long-distance moving.</li> 
-            <li><span><b>Review the Contract:</b></span> Carefully read the contract before signing and clarify any doubts.</li>
-            <li><span><b>Ask About Hidden Fees:</b></span> Ensure there are no hidden charges that could surprise you later.</li>
-            <li><span><b>Inquire About Their Experience:</b></span> Choose a company with a proven track record in the moving industry.</li><br />
-            </ul>
-            </p>
-            <p style="margin-bottom: 5px; font-size: 22px;">
-              <b>4. Why You Should Consider Professional Packing Services</b><br />
-            </p>
-            <p>
-            Packing can be one of the most time-consuming parts of moving. Here’s why you should consider hiring professional packing services.<br /><br /><br /> 
-            <ul style="line-height: 2.0em; padding-left: 25px;">
-            <li><span><b>Save Time:</b></span> Professional packers can efficiently pack your entire home in a fraction of the time it would take you.</li>
-            <li><span><b>Ensure Safety:</b></span> They use high-quality packing materials and techniques to protect your belongings.</li>
-            <li><span><b>Reduce Stress:</b></span> Letting professionals handle the packing frees up your time and reduces moving-related stress.</li>
-            <li><span><b>Experience and Expertise:</b></span> Professional packers have the experience to pack items of all shapes and sizes securely.</li>
-            <li><span><b>Insurance Coverage:</b></span> Many moving companies offer insurance options for items packed by their professionals, providing peace of mind.</li><br />
-            </ul>
-            </p>
-            <p style="margin-bottom: 5px; font-size: 22px;">
-              <b>5. How to Make Long-Distance Moving Easier</b><br />
-            </p>
-            <p>
-            Long-distance moving comes with its unique set of challenges. Here are some tips to make your cross-country move easier.<br /><br /><br />
-            <ul style="line-height: 2.0em; padding-left: 25px;">
-            <li><span><b>Plan Ahead:</b></span> Start planning your move as early as possible to avoid last-minute issues.</li>
-            <li><span><b>Choose the Right Movers:</b></span> Hire experienced long-distance movers who are licensed and insured.</li>
-            <li><span><b>Stay Organized:</b></span> Keep a detailed inventory of your belongings and important documents.</li>
-            <li><span><b>Pack Smart:</b></span> Use proper packing materials and techniques to protect your items during transit.</li>
-            <li><span><b>Take Care of Utilities:</b></span> Arrange for utility services to be disconnected at your old home and connected at your new one.</li>
-            <li><span><b>Stay in Touch with Your Movers:</b></span> Maintain open communication with your moving company to stay updated on the status of your move.</li>
-            <li><span><b>Prepare for the Unexpected:</b></span> Have a contingency plan in case of delays or other issues.</li> 
+            <li><span><b>Introduction:</b></span> High-quality hacksaw blades are vital for precise cutting in industrial and commercial sectors, offering durability, efficiency, and enhanced productivity. Discover superior performance with Shree Paramhans Enterprises</li>
+            <li><span><b>Materials Selection:</b></span> Choosing premium materials like high-carbon steel ensures hacksaw blades are durable and maintain sharpness, crucial for efficient cutting in industrial applications.</li>
+            <li><span><b>Blade Design and Engineering:</b></span> Designing hacksaw blades involves optimizing tooth configuration, blade thickness, and geometry for precise cutting of metals and plastics, ensuring durability and efficiency in industrial applications.</li>
+            <li><span><b>Manufacturing Process:</b></span> Step-by-step manufacturing process of hacksaw blades
+
+              <ul style="line-height: 2.0em; padding-left: 25px;">
+              <li><span><b>Material Selection:</b></span> High-quality materials like high-carbon steel or bi-metal alloys are chosen for durability and sharpness.</li>
+              <li><span><b>Blade Design:</b></span> Engineers design the blade's tooth configuration, thickness, and geometry for optimal cutting performance.</li>
+              <li><span><b>Blade Forming:</b></span> Raw materials are shaped into the initial blade form through stamping or rolling processes.</li>
+              <li><span><b>Heat Treatment:</b></span> Blades undergo heat treatment to enhance hardness and toughness, crucial for longevity.</li>
+              <li><span><b>Grinding:</b></span> Precision grinding ensures the blades have sharp cutting edges for effective material slicing.</li>
+              <li><span><b>Finishing:</b></span> Final polishing and coating processes improve the blade's surface quality and corrosion resistance.</li>
+              <li><span><b>Quality Control:</b></span> Rigorous testing measures ensure each blade meets industry standards for sharpness and durability.</li>
+              </ul>
+
+            </li>
+            <li><span><b>Quality Assurance:</b></span> Quality assurance in hacksaw blade production ensures durability, sharpness, and consistency through rigorous testing, meeting industry standards and customer expectations.</li>
+            <li><span><b>Application and Benefits:</b></span> Hacksaw blades are essential for cutting metals, plastics, and other materials in industries such as construction, automotive, and manufacturing, ensuring precision and efficiency</li>
             </ul>
             </p>
           </div>
@@ -242,7 +185,7 @@ function collapsibleProcessing() {
 
 function getFAQsContent(isPage) {
   return `
-    <div id="faq" class="contact border-bottom-class" style="background: #ffffff;">
+    <div id="faq" class="contact" style="background: #ffffff;">
       <div class="iyohgi" style="text-align: center;">
         <h1 class="i78bq-2-3 contact-details">FAQs</h1>
         <div id="city-section-content">
@@ -301,6 +244,7 @@ function getFAQsContent(isPage) {
 
 function createHtmlContent() {
   const brand = "#403f2d";
+  const cityOrLinkName = finalPath?.split("/")?.[1]?.split(".")?.[0];
   return `
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="iu9w" class="navbar-cont" style="background: #fffbf6;">
@@ -343,15 +287,14 @@ function createHtmlContent() {
         ? getBlogsContent(isPage)
         : isPage && cityOrLinkName === "FAQs"
         ? getFAQsContent(isPage)
-        : `<div id="product-images" class="contact border-bottom-class" style="background: #ffffff;">
-      <div class="iyohgi" style="text-align: center;">
-        <div class="">
+        : `<div id="product-images" class="contact" style="background: #ffffff;">
+      <div class="" style="text-align: center;">
           <div class="slideshow-container">
   
             <div class="slides fade">
               <img class="slideImg" alt="" loading="lazy" src=${
                 isPage ? "../assets/1.jpeg" : "assets/1.jpeg"
-              } height="300px" width="350px">
+              } height="auto">
               <div class="slides-text">Safe and Sound, Every Detail Perfected. 🛡️✨ #Excellence Assured
               <br /><br />
               </div>
@@ -359,24 +302,40 @@ function createHtmlContent() {
   
             <div class="slides fade">
               <img class="slideImg" alt="" loading="lazy" src=${
-                isPage ? "../assets/3.png" : "assets/3.png"
-              } height="300px" width="350px">
+                isPage ? "../assets/2.jpeg" : "assets/2.jpeg"
+              } height="auto">
               <div class="slides-text">Powered by Excellence: Our Arsenal of Resources Ready for You. 💼⚙️ #Prepared For Success
               </div>
             </div>
   
             <div class="slides fade">
               <img class="slideImg" alt="" loading="lazy" src=${
-                isPage ? "../assets/4.png" : "assets/4.png"
-              } height="300px" width="320px">
+                isPage ? "../assets/3.jpg" : "assets/3.jpg"
+              } height="auto">
               <div class="slides-text">Your Trusted Partner: Where Every Customer Finds a Companion. 🤝 #Customer First
               </div>
             </div>
   
             <div class="slides fade">
               <img class="slideImg" alt="" loading="lazy" src=${
-                isPage ? "../assets/5.png" : "assets/5.png"
-              } height="300px" width="320px">
+                isPage ? "../assets/4.jpeg" : "assets/4.jpeg"
+              } height="auto">
+              <div class="slides-text">Relax, We've Got You Covered: Ensuring Customer Satisfaction Every Step of the Way. 😌👌 #Peace Of Mind Service
+              </div>
+            </div>
+
+            <div class="slides fade">
+              <img class="slideImg" alt="" loading="lazy" src=${
+                isPage ? "../assets/5.jpg" : "assets/5.jpg"
+              } height="auto">
+              <div class="slides-text">Relax, We've Got You Covered: Ensuring Customer Satisfaction Every Step of the Way. 😌👌 #Peace Of Mind Service
+              </div>
+            </div>
+
+            <div class="slides fade">
+              <img class="slideImg" alt="" loading="lazy" src=${
+                isPage ? "../assets/6.jpeg" : "assets/6.jpeg"
+              } height="auto">
               <div class="slides-text">Relax, We've Got You Covered: Ensuring Customer Satisfaction Every Step of the Way. 😌👌 #Peace Of Mind Service
               </div>
             </div>
@@ -389,22 +348,23 @@ function createHtmlContent() {
             <span class="slides-dot" onclick="currentSlide('slides', 'slides-dot', 1)"></span>
             <span class="slides-dot" onclick="currentSlide('slides', 'slides-dot', 2)"></span>
             <span class="slides-dot" onclick="currentSlide('slides', 'slides-dot', 3)"></span>
+            <span class="slides-dot" onclick="currentSlide('slides', 'slides-dot', 4)"></span>
+            <span class="slides-dot" onclick="currentSlide('slides', 'slides-dot', 5)"></span>
           </div>
-        </div>
       </div>
      </div>
     </div>
 
-    <div id="intro" class="contact border-bottom-class" style="background: #ffffff;">
+    <div id="intro" class="contact" style="background: #ffffff;">
       <div class="iyohgi" style="text-align: center;">
         <h1 class="i78bq-2-3 contact-details">Backed by Cutting Edge Technology</h1>
         <p>
-        Shree Paramhans Enterprises is a professionally managed manufacturer and supplier of high carbon steel hand hacksaw blades. The products are remarkable for their durability and performance. We have a research and development unit for ensuring superior quality of hand hacksaw blades to satisfy the requirements of our clients. SPENTO is our copyright brand having proper registration with premium quality.  
+        Welcome to Shree Paramhans Enterprises, your trusted partner in the hacksaw blades industry. With ${new Date().getFullYear() - new Date('1998-06-20').getFullYear()} years of expertise, we specialize in manufacturing high-quality hacksaw blades engineered for precision and durability using High Carbon Steel as raw material. Our blades are crafted from premium materials to ensure superior performance in cutting metals, plastics, and more. Based in Bhiwani, Haryana, we serve a global clientele, providing efficient cutting solutions tailored to diverse industrial and commercial applications. Discover how our advanced hacksaw blades can optimize your cutting operations and elevate productivity. Contact us today to explore our extensive range and experience the difference in quality and reliability.
         </p>
       </div>
     </div>
 
-    <div id="products" class="contact border-bottom-class" style="background: #7f8060;">
+    <div id="products" class="contact" style="background: #7f8060;">
       <div class="iyohgi" style="text-align: center;">
         <h1 class="i78bq-2-3 contact-details ">Our Products</h1>
         <div class="card">
@@ -419,7 +379,7 @@ function createHtmlContent() {
       </div>
     </div>
 
-    <div id="cards-list" class="contact border-bottom-class" style="background: #ffffff;">
+    <div id="cards-list" class="contact" style="background: #ffffff;">
       <div class="iyohgi" style="text-align: center;">
         <div id="cards-content">
           <div class="card flex-div col-div" style="background: #7f8060;">
@@ -427,33 +387,33 @@ function createHtmlContent() {
                 isPage ? "../assets/objective.png" : "assets/objective.png"
               } alt="objective" width="50px" height="50px">
               <div class="container">
-                  <h4><b>Objectives</b></h4>
-                  <p>Our objective is to provide quality product to our clients. We give preference to our clients satisfaction.</p>
+                  <h4><b>Objective</b></h4>
+                  <p>Our goal at Shree Paramhans Enterprises is to provide superior hacksaw blades crafted from High Carbon Steel, ensuring precision and durability for cutting metals, plastics, and more. Based in Bhiwani, Haryana, we serve global industries with reliable, high-performance solutions tailored to diverse cutting needs.</p>
               </div>
           </div>
           <div class="card flex-div col-div" style="background: #7f8060;">
               <img src=${
                 isPage ? "../assets/quality_assurance.png" : "assets/quality_assurance.png"
-              } alt="objective" width="50px" height="50px">
+              } alt="quality assurance" width="50px" height="50px">
               <div class="container">
                   <h4><b>Quality Assurance</b></h4>
-                  <p>We are one of the prominent names in the field of manufacturing and supplying of High Carbon Steel Hacksaw Blades.</p>
+                  <p>We uphold stringent quality assurance measures at Shree Paramhans Enterprises, ensuring our hacksaw blades meet the highest standards for precision and durability. Crafted from High Carbon Steel, our products excel in cutting metals and plastics, guaranteeing reliability for industrial and commercial applications.</p>
               </div>
           </div>
           <div class="card flex-div col-div" style="background: #7f8060;">
               <img src=${
                 isPage ? "../assets/clients.png" : "assets/clients.png"
-              } alt="objective" width="50px" height="50px">
+              } alt="clients" width="50px" height="50px">
               <div class="container">
                   <h4><b>Clients</b></h4>
-                  <p>We have been able to attract a large number of clients that is spread all over the country. Our products are highly demanded in the industry.</p>
+                  <p>Our diverse clientele at Shree Paramhans Enterprises includes industrial facilities and commercial workshops worldwide. They rely on our high-quality hacksaw blades for precision cutting of metals and plastics. We cater to global markets with efficient solutions tailored to diverse industrial needs.</p>
               </div>
           </div>
         </div>
       </div>
     </div>
   
-    <div id="form-detail" class="contact border-bottom-class" style="background: #7f8060;">
+    <div id="form-detail" class="contact" style="background: #7f8060;">
       <div class="iyohgi" class="flex-div col-div" style="align-items: unset;">
         <p class="i78bq-2-3 contact-details" style="font-size: x-large; text-align: center; border-bottom: 70px;"></b></p>
         <div class="inquire-tos-content">
@@ -492,9 +452,9 @@ function createHtmlContent() {
     `
     }
 
-    <div id="contact" class="contact border-bottom-class" style="background: white;">
+    <div id="contact" class="contact" style="background: white;">
         <div class="iyohgi" style="text-align: center;">
-        <h1 class="contact-details ">Doubts Dismissed: Let Us Clear the Path to Clarity with Shree Paramhans Enterprises</h1>
+        <h1 class="contact-details">Contact us for premium hacksaw blades. Fast delivery. Satisfaction guaranteed.</h1>
         <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
             <div class="fill-form-img-div" style="align-self: center;">
             <img alt="" loading="lazy" width="500px" height="auto" src=${
@@ -565,5 +525,5 @@ let slideIndex = 0;
 if (!isPage) {
   closeModal();
   onSubmit();
-  showSlides("slides", "dot", slideIndex);
+  showSlides("slides", "slides-dot", slideIndex);
 }
