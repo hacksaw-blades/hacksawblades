@@ -97,6 +97,46 @@ function showSlides(slideClassName, dotClassName, slideIndex) {
   }, 2000); // Change image every 2 seconds
 }
 
+function setActiveTab() {
+  const home = document.getElementById("home");
+  const products = document.getElementById("products");
+  const blogs = document.getElementById("blogs");
+  const aboutUs = document.getElementById("aboutUs");
+  const faqs = document.getElementById("faqs");
+  const tabs = [home, products, blogs, aboutUs, faqs];
+
+  if (finalPath === "hacksawblades/index.html") {
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].className.replace(" active-a", "");
+    }
+    home.className += " active-a";
+  }
+  if (finalPath === "pages/Blogs.html") {
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].className.replace(" active-a", "");
+    }
+    blogs.className += " active-a";
+  }
+  if (finalPath === "pages/AboutUs.html") {
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].className.replace(" active-a", "");
+    }
+    aboutUs.className += " active-a";
+  }
+  if (finalPath === "pages/FAQs.html") {
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].className.replace(" active-a", "");
+    }
+    faqs.className += " active-a";
+  }
+  if (finalPath === "pages/Products.html") {
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].className.replace(" active-a", "");
+    }
+    products.className += " active-a";
+  }
+}
+
 function getAboutUsContent(isPage) {
   return `
     <div id="about-us" class="contact" style="background: #7f8060;">
@@ -109,7 +149,9 @@ function getAboutUsContent(isPage) {
             }></img>
           </div>
           <div style="text-align: left;">
-            <p>Welcome to Shree Paramhans Enterprises, a renowned leader in the manufacturing of premium hacksaw blades. With ${new Date().getFullYear() - new Date('1998-06-20').getFullYear()} years of industry expertise, we specialize in designing and producing high-quality blades crafted from top-grade materials like high-carbon steel and bi-metal alloys. Our blades are engineered for precision cutting in various applications, ensuring durability and efficiency.</p><br /><br />
+            <p>Welcome to Shree Paramhans Enterprises, a renowned leader in the manufacturing of premium hacksaw blades. With ${
+              new Date().getFullYear() - new Date("1998-06-20").getFullYear()
+            } years of industry expertise, we specialize in designing and producing high-quality blades crafted from top-grade materials like high-carbon steel and bi-metal alloys. Our blades are engineered for precision cutting in various applications, ensuring durability and efficiency.</p><br /><br />
             <p>Based in Bhiwani, Haryana, we serve a global clientele across industries such as construction, automotive, and manufacturing. Our state-of-the-art manufacturing facility employs advanced technology and strict quality control measures to guarantee superior products that exceed customer expectations. Whether you need blades for heavy-duty industrial use or intricate workshop tasks, Shree Paramhans Enterprises provides reliable solutions tailored to your specific requirements.</p><br /><br />
              
             <p>At Shree Paramhans Enterprises, customer satisfaction is our priority. We offer personalized service, quick turnaround times, and competitive pricing to meet your business needs. Explore our comprehensive range of hacksaw blades and experience the difference in performance and longevity. Contact us today to discuss how we can support your cutting operations with our expertise and commitment to excellence.
@@ -185,7 +227,7 @@ function collapsibleProcessing() {
 
 function getFAQsContent(isPage) {
   return `
-    <div id="faq" class="contact" style="background: #ffffff;">
+    <div id="faq" class="contact" style="background: #7f8060;">
       <div class="iyohgi" style="text-align: center;">
         <h1 class="i78bq-2-3 contact-details">FAQs</h1>
         <div id="city-section-content">
@@ -195,45 +237,48 @@ function getFAQsContent(isPage) {
             }></img>
           </div>
           <div class="contact-details" style="text-align: left;">
-            <button type="button" class="collapsible">What services do you offer as a moving and packers company?</button>
+            <button type="button" class="collapsible">What types of hacksaw blades do you offer?</button>
             <div class="content">
-              <p>We offer a wide range of services including residential moving, commercial moving, packing and unpacking, storage solutions, and long-distance moving. Our professional movers are trained to handle all aspects of the moving process to ensure a smooth transition to your new location.</p>
+              <p>We offer a wide range of hacksaw blades, all made from high carbon steel. Our selection caters to different cutting needs, ensuring you have the right tool for the job.</p>
             </div>
-            <button type="button" class="collapsible">How much do your moving services cost?</button>
+            <button type="button" class="collapsible">How do I choose the right hacksaw blade for my project?</button>
             <div class="content">
-              <p>The cost of our moving services depends on various factors such as the distance of the move, the size of your belongings, and the level of packing services required. For an accurate estimate, please contact us for a free moving quote.</p>
+              <p>Choosing the right hacksaw blade depends on the material you need to cut. Our high carbon steel blades are ideal for cutting metals and plastic. They offer durability and excellent cutting performance for various applications.
+              </p>
             </div>
-            <button type="button" class="collapsible">How do you ensure the safety of my belongings during the move?</button>
+            <button type="button" class="collapsible">What are the benefits of high carbon steel hacksaw blades?</button>
             <div class="content">
-              <p>We prioritize the safety of your belongings by using high-quality packing materials, secure packing techniques, and experienced movers. Our team is trained to handle fragile and valuable items with care. Additionally, we offer moving insurance options for added peace of mind.</p>
+              <p>High carbon steel hacksaw blades provide superior hardness and strength, making them perfect for cutting through tough materials. They maintain sharpness longer, offering a reliable and durable solution for your cutting needs.
+              </p>
             </div>
-            <button type="button" class="collapsible">Do you provide packing materials?</button>
+            <button type="button" class="collapsible">How do I properly use a hacksaw blade?</button>
             <div class="content">
-              <p>Yes, we provide a variety of packing materials including boxes, bubble wrap, packing paper, and tape. Our packing supplies are designed to protect your items during transit. You can purchase these materials separately or as part of our packing services.</p>
+              <p>To use a hacksaw blade properly, ensure it is securely fastened in the frame with the teeth facing forward. Use steady, even strokes and avoid applying excessive pressure, as this can cause the blade to break. Always wear safety gear, such as gloves and goggles, when cutting.</p>
             </div>
-            <button type="button" class="collapsible">How far in advance should I schedule my move?</button>
+            <button type="button" class="collapsible">How do I maintain and store my hacksaw blades?</button>
             <div class="content">
-              <p>We recommend scheduling your move at least 4-6 weeks in advance, especially during peak moving seasons. This allows us to accommodate your preferred moving date and provide the best possible service.</p>
+              <p>To maintain your hacksaw blades, keep them clean and dry to prevent rusting. Store them in a dry place and avoid bending or twisting them. For best results, replace blades that show signs of wear, such as dullness or missing teeth.</p>
             </div>
-            <button type="button" class="collapsible">Can you handle long-distance moves?</button>
+            <button type="button" class="collapsible">Can I sharpen a high carbon steel hacksaw blade?</button>
             <div class="content">
-              <p>Yes, we specialize in both local and long-distance moving services. Our team is equipped to manage all the logistics of long-distance relocations, ensuring your belongings arrive safely and on time.</p>
+              <p>While high carbon steel hacksaw blades can technically be sharpened, it is often more cost-effective to replace the blade. Our blades are designed to be replaced when dull to ensure optimal cutting performance.</p>
             </div>
-            <button type="button" class="collapsible">What should I do to prepare for my move?</button>
+            <button type="button" class="collapsible">What safety precautions should I take when using a hacksaw blade?</button>
             <div class="content">
-              <p>To prepare for your move, start by decluttering and organizing your belongings. Create an inventory list and label your boxes. We also recommend setting aside important documents and personal items to keep with you during the move. Our team can provide a detailed moving checklist to help you get started.</p>
+              <p>Always wear safety goggles and gloves when using a hacksaw blade. Ensure the blade is properly secured in the frame and inspect it for damage before use. Use steady, controlled strokes and avoid excessive force to prevent accidents.</p>
             </div>
-            <button type="button" class="collapsible">Do you offer storage solutions?</button>
+            <button type="button" class="collapsible">Do you offer bulk discounts for hacksaw blades?</button>
             <div class="content">
-              <p>Yes, we offer secure storage solutions for both short-term and long-term needs. Our storage facilities are climate-controlled and monitored 24/7 to ensure the safety of your belongings. Contact us to learn more about our storage options.</p>
+              <p>Yes, we offer bulk discounts for large orders of hacksaw blades. Contact us for more information on pricing and availability.</p>
             </div>
-            <button type="button" class="collapsible">Are there any items you cannot move?</button>
+            <button type="button" class="collapsible">What is the difference between TPI (teeth per inch) ratings on hacksaw blades?</button>
             <div class="content">
-              <p>For safety reasons, we cannot move hazardous materials such as flammable liquids, explosives, and certain chemicals. Additionally, we recommend transporting valuables such as jewelry, important documents, and personal mementos yourself. Please contact us for a complete list of restricted items.</p>
+              <p>TPI (teeth per inch) indicates the number of teeth on the blade per inch. Blades with a higher TPI are used for cutting thin, hard materials, while blades with a lower TPI are better for cutting thick, soft materials. Choose a TPI rating based on the material and desired cut quality.
+              </p>
             </div>
-            <button type="button" class="collapsible">How can I get a moving quote?</button>
+            <button type="button" class="collapsible">Where can I buy your hacksaw blades?</button>
             <div class="content">
-              <p>You can get a moving quote by filling out our online form, calling our office, or scheduling an in-home estimate. Provide us with details about your move, including the size of your home, the distance, and any special requirements. We will provide a free, no-obligation quote based on your specific needs.</p>
+              <p>You can purchase our high carbon steel hacksaw blades by filling out the inquiry form on our website. Alternatively, you can contact us directly via phone, WhatsApp, or email for more information and to place an order.</p>
             </div>
           </div>
         </div>
@@ -272,11 +317,11 @@ function createHtmlContent() {
         </div>
       </div>
       <div class="nav-inner pages a-text" style="justify-content: space-around; background: ${brand};">
-        <a href="https://www.spentohacksawblades.com/"><b>Home</b></a>
-        <a href="https://www.spentohacksawblades.com/pages/AboutUs.html"><b>About Us</b></a>
-        <a href="https://www.spentohacksawblades.com/#our-services"><b>Products</b></a>
-        <a href="https://www.spentohacksawblades.com/pages/Blogs.html"><b>Blogs</b></a>
-        <a href="https://www.spentohacksawblades.com/pages/FAQs.html"><b>FAQs</b></a>
+        <a id="home" href="https://www.spentohacksawblades.com/"><b>Home</b></a>
+        <a id="aboutUs" href="https://www.spentohacksawblades.com/pages/AboutUs.html"><b>About Us</b></a>
+        <a id="products" href="https://www.spentohacksawblades.com/#our-services"><b>Products</b></a>
+        <a id="blogs" href="https://www.spentohacksawblades.com/pages/Blogs.html"><b>Blogs</b></a>
+        <a id="faqs" href="https://www.spentohacksawblades.com/pages/FAQs.html"><b>FAQs</b></a>
       </div>
     </div>
   
@@ -292,7 +337,7 @@ function createHtmlContent() {
           <div class="slideshow-container">
   
             <div class="slides fade">
-              <img class="slideImg" alt="" loading="lazy" src=${
+              <img class="slideImg" alt="24 TPI double sided 1 inch blades in black-yellow" loading="lazy" src=${
                 isPage ? "../assets/1.jpeg" : "assets/1.jpeg"
               } height="auto">
               <div class="slides-text">Safe and Sound, Every Detail Perfected. 🛡️✨ #Excellence Assured
@@ -301,7 +346,7 @@ function createHtmlContent() {
             </div>
   
             <div class="slides fade">
-              <img class="slideImg" alt="" loading="lazy" src=${
+              <img class="slideImg" alt="24 TPI single sided half inch blades in black-yellow & black-blue" loading="lazy" src=${
                 isPage ? "../assets/2.jpeg" : "assets/2.jpeg"
               } height="auto">
               <div class="slides-text">Powered by Excellence: Our Arsenal of Resources Ready for You. 💼⚙️ #Prepared For Success
@@ -309,7 +354,7 @@ function createHtmlContent() {
             </div>
   
             <div class="slides fade">
-              <img class="slideImg" alt="" loading="lazy" src=${
+              <img class="slideImg" alt="18 TPI double sided 1 inch blades in black-silver" loading="lazy" src=${
                 isPage ? "../assets/3.jpg" : "assets/3.jpg"
               } height="auto">
               <div class="slides-text">Your Trusted Partner: Where Every Customer Finds a Companion. 🤝 #Customer First
@@ -317,7 +362,7 @@ function createHtmlContent() {
             </div>
   
             <div class="slides fade">
-              <img class="slideImg" alt="" loading="lazy" src=${
+              <img class="slideImg" alt="packet of 30 blades in a plastic box wrapped in spento wrapping" loading="lazy" src=${
                 isPage ? "../assets/4.jpeg" : "assets/4.jpeg"
               } height="auto">
               <div class="slides-text">Relax, We've Got You Covered: Ensuring Customer Satisfaction Every Step of the Way. 😌👌 #Peace Of Mind Service
@@ -325,7 +370,7 @@ function createHtmlContent() {
             </div>
 
             <div class="slides fade">
-              <img class="slideImg" alt="" loading="lazy" src=${
+              <img class="slideImg" alt="flexible blades without paint" loading="lazy" src=${
                 isPage ? "../assets/5.jpg" : "assets/5.jpg"
               } height="auto">
               <div class="slides-text">Relax, We've Got You Covered: Ensuring Customer Satisfaction Every Step of the Way. 😌👌 #Peace Of Mind Service
@@ -333,7 +378,7 @@ function createHtmlContent() {
             </div>
 
             <div class="slides fade">
-              <img class="slideImg" alt="" loading="lazy" src=${
+              <img class="slideImg" alt="spento cardboard box of 30 packets" loading="lazy" src=${
                 isPage ? "../assets/6.jpeg" : "assets/6.jpeg"
               } height="auto">
               <div class="slides-text">Relax, We've Got You Covered: Ensuring Customer Satisfaction Every Step of the Way. 😌👌 #Peace Of Mind Service
@@ -359,7 +404,9 @@ function createHtmlContent() {
       <div class="iyohgi" style="text-align: center;">
         <h1 class="i78bq-2-3 contact-details">Backed by Cutting Edge Technology</h1>
         <p>
-        Welcome to Shree Paramhans Enterprises, your trusted partner in the hacksaw blades industry. With ${new Date().getFullYear() - new Date('1998-06-20').getFullYear()} years of expertise, we specialize in manufacturing high-quality hacksaw blades engineered for precision and durability using High Carbon Steel as raw material. Our blades are crafted from premium materials to ensure superior performance in cutting metals, plastics, and more. Based in Bhiwani, Haryana, we serve a global clientele, providing efficient cutting solutions tailored to diverse industrial and commercial applications. Discover how our advanced hacksaw blades can optimize your cutting operations and elevate productivity. Contact us today to explore our extensive range and experience the difference in quality and reliability.
+        Welcome to Shree Paramhans Enterprises, your trusted partner in the hacksaw blades industry. With ${
+          new Date().getFullYear() - new Date("1998-06-20").getFullYear()
+        } years of expertise, we specialize in manufacturing high-quality hacksaw blades engineered for precision and durability using High Carbon Steel as raw material. Our blades are crafted from premium materials to ensure superior performance in cutting metals, plastics, and more. Based in Bhiwani, Haryana, we serve a global clientele, providing efficient cutting solutions tailored to diverse industrial and commercial applications. Discover how our advanced hacksaw blades can optimize your cutting operations and elevate productivity. Contact us today to explore our extensive range and experience the difference in quality and reliability.
         </p>
       </div>
     </div>
@@ -393,7 +440,9 @@ function createHtmlContent() {
           </div>
           <div class="card flex-div col-div" style="background: #7f8060;">
               <img src=${
-                isPage ? "../assets/quality_assurance.png" : "assets/quality_assurance.png"
+                isPage
+                  ? "../assets/quality_assurance.png"
+                  : "assets/quality_assurance.png"
               } alt="quality assurance" width="50px" height="50px">
               <div class="container">
                   <h4><b>Quality Assurance</b></h4>
@@ -462,7 +511,6 @@ function createHtmlContent() {
             }></img>
             </div>
             <div>
-            <p id="iqrh3-2-2" class="contact-details" style="margin-bottom: 10px; margin-top: 20px;">Contact us</p>
             <div class="igiuzk flex-div row-div">
             <a id="i2tpy3" aria-label="facebook" href="https://www.facebook.com/hacksawblades" target="_blank"><img alt="facebook page link" loading="lazy" id="i3gekg" height="49px" width="49px" src=${
               isPage ? "../assets/fb.svg" : "assets/fb.svg"
@@ -518,6 +566,7 @@ function main() {
 
 main();
 
+setActiveTab();
 if (isPage) collapsibleProcessing();
 
 let slidesTimeout;

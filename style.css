@@ -80,6 +80,9 @@
     text-decoration:none;
     color:white;
   }
+  .active-a {
+    border-bottom: 1px solid white;
+  }
   .learn-more{
     color:white;
     padding:15px 25px 15px 25px;
