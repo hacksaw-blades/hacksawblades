@@ -340,7 +340,7 @@ function createHtmlContent() {
               <img class="slideImg" alt="24 TPI double sided 1 inch blades in black-yellow" loading="lazy" src=${
                 isPage ? "../assets/1.jpeg" : "assets/1.jpeg"
               } height="auto">
-              <div class="slides-text">Safe and Sound, Every Detail Perfected. 🛡️✨ #Excellence Assured
+              <div class="slides-text">
               <br /><br />
               </div>
             </div>
@@ -349,7 +349,7 @@ function createHtmlContent() {
               <img class="slideImg" alt="24 TPI single sided half inch blades in black-yellow & black-blue" loading="lazy" src=${
                 isPage ? "../assets/2.jpeg" : "assets/2.jpeg"
               } height="auto">
-              <div class="slides-text">Powered by Excellence: Our Arsenal of Resources Ready for You. 💼⚙️ #Prepared For Success
+              <div class="slides-text">
               </div>
             </div>
   
@@ -357,31 +357,31 @@ function createHtmlContent() {
               <img class="slideImg" alt="18 TPI double sided 1 inch blades in black-silver" loading="lazy" src=${
                 isPage ? "../assets/3.jpg" : "assets/3.jpg"
               } height="auto">
-              <div class="slides-text">Your Trusted Partner: Where Every Customer Finds a Companion. 🤝 #Customer First
+              <div class="slides-text">
               </div>
             </div>
   
             <div class="slides fade">
-              <img class="slideImg" alt="packet of 30 blades in a plastic box wrapped in spento wrapping" loading="lazy" src=${
+              <img class="slideImg" alt="blades in a PVC box wrapped in spento poly pouch wrapping" loading="lazy" src=${
                 isPage ? "../assets/4.jpeg" : "assets/4.jpeg"
               } height="auto">
-              <div class="slides-text">Relax, We've Got You Covered: Ensuring Customer Satisfaction Every Step of the Way. 😌👌 #Peace Of Mind Service
+              <div class="slides-text">
               </div>
             </div>
 
             <div class="slides fade">
-              <img class="slideImg" alt="flexible blades without paint" loading="lazy" src=${
+              <img class="slideImg" alt="flexible oiled blades" loading="lazy" src=${
                 isPage ? "../assets/5.jpg" : "assets/5.jpg"
               } height="auto">
-              <div class="slides-text">Relax, We've Got You Covered: Ensuring Customer Satisfaction Every Step of the Way. 😌👌 #Peace Of Mind Service
+              <div class="slides-text">
               </div>
             </div>
 
             <div class="slides fade">
-              <img class="slideImg" alt="spento cardboard box of 30 packets" loading="lazy" src=${
+              <img class="slideImg" alt="spento master packing of 30 packets" loading="lazy" src=${
                 isPage ? "../assets/6.jpeg" : "assets/6.jpeg"
               } height="auto">
-              <div class="slides-text">Relax, We've Got You Covered: Ensuring Customer Satisfaction Every Step of the Way. 😌👌 #Peace Of Mind Service
+              <div class="slides-text">
               </div>
             </div>
   
@@ -404,25 +404,73 @@ function createHtmlContent() {
       <div class="iyohgi" style="text-align: center;">
         <h1 class="i78bq-2-3 contact-details">Backed by Cutting Edge Technology</h1>
         <p>
-        Welcome to Shree Paramhans Enterprises, your trusted partner in the hacksaw blades industry. With ${
+        Welcome to <b>Shree Paramhans Enterprises</b>, your trusted partner in the hacksaw blades industry. With ${
           new Date().getFullYear() - new Date("1998-06-20").getFullYear()
-        } years of expertise, we specialize in manufacturing high-quality hacksaw blades engineered for precision and durability using High Carbon Steel as raw material. Our blades are crafted from premium materials to ensure superior performance in cutting metals, plastics, and more. Based in Bhiwani, Haryana, we serve a global clientele, providing efficient cutting solutions tailored to diverse industrial and commercial applications. Discover how our advanced hacksaw blades can optimize your cutting operations and elevate productivity. Contact us today to explore our extensive range and experience the difference in quality and reliability.
+        } years of expertise, we specialize in manufacturing high-quality <b>hacksaw blades</b> engineered for precision and durability using <b>high carbon steel</b> as raw material. Our blades are crafted from premium materials to ensure superior performance in cutting metals, plastics, and more. Based in <b>Bhiwani, Haryana</b>, we serve a global clientele, providing efficient cutting solutions tailored to diverse industrial and commercial applications. Discover how our advanced hacksaw blades can optimize your cutting operations and elevate productivity. Contact us today to explore our extensive range and experience the difference in quality and reliability.
         </p>
       </div>
     </div>
 
     <div id="products" class="contact" style="background: #7f8060;">
-      <div class="iyohgi" style="text-align: center;">
-        <h1 class="i78bq-2-3 contact-details ">Our Products</h1>
-        <div class="card">
-            <img src=${
-              isPage ? "../assets/objective.png" : "assets/objective.png"
-            } alt="objective" width="251px" height="250px">
-            <div class="container">
-                <h4><b></b></h4>
-                <p>Architect & Engineer</p>
-            </div>
+      <div class="iyohgi">
+      <h1 class="i78bq-2-3 contact-details" style="text-align: center;">Our Products</h1>
+      <div class="row">
+        <div class="column">
+          <img src=${
+            isPage ? "../assets/2.jpeg" : "assets/2.jpeg"
+          } alt="Single Sided Edge" style="width:100%">
+          <div class="container">
+              <h4><b>Single Sided Edge</b></h4><br />
+              <p>
+                <ul class="container">
+                  <li>All hard low alloy blades made from high carbon steel</li>
+                  <li>Oven baked paint</li>
+                  <li>Width - 10MM to 12.5 MM</li>
+                  <li>Length - 310 to 315 MM</li>
+                  <li>Thickness - 0.48 MM to 0.63 MM</li>
+                  <li>Sharp teeth with accurate pitch in 14, 18 & 24 TPI</li>
+                </ul>
+              </p>
+          </div>
         </div>
+        <div class="column">
+          <img src=${
+            isPage ? "../assets/1.jpeg" : "assets/1.jpeg"
+          } alt="Double Sided Edge" style="width:100%">
+          <div class="container">
+              <h4><b>Double Sided Edge</b></h4><br />
+              <p>
+                <ul class="container">
+                  <li>All hard low alloy blades made from high carbon steel</li>
+                  <li>Oven baked paint</li>
+                  <li>Width - 20MM to 25 MM</li>
+                  <li>Length - 310 to 315 MM</li>
+                  <li>Thickness - 0.48 MM to 0.63 MM</li>
+                  <li>Sharp teeth with accurate pitch in 14, 18 & 24 TPI</li>
+                </ul>
+              </p>
+          </div>
+        </div>
+        <div class="column">
+          <img src=${
+            isPage ? "../assets/5.jpg" : "assets/5.jpg"
+          } alt="Flexible Blades" style="width:100%">
+          <div class="container">
+              <h4><b>Flexible Blades</b></h4><br />
+              <p>
+                <ul class="container">
+                  <li>Fully Flexible Blades</li>
+                  <li>Finish - anti rust oiled blades</li>
+                  <li>Can be Single, Double, 2-in-1 or Bamboo</li>
+                  <li>Single - width will be 10MM to 12.5 MM</li>
+                  <li>Double - width will be 20MM to 25 MM</li>
+                  <li>2-in-1 - will have edge on both sides with 10MM to 12.5 MM width</li>
+                  <li>Bamboo - will have 8 TPI edge at one side and 14, 18 or 24 TPI at other side</li>
+                </ul>
+              </p>
+          </div>
+        </div> 
+        </div> 
       </div>
     </div>
 
