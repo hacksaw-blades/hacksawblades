@@ -99,41 +99,37 @@ function showSlides(slideClassName, dotClassName, slideIndex) {
 
 function setActiveTab() {
   const home = document.getElementById("home");
-  const products = document.getElementById("products");
+  const products = document.getElementById("product");
   const blogs = document.getElementById("blogs");
   const aboutUs = document.getElementById("aboutUs");
   const faqs = document.getElementById("faqs");
   const tabs = [home, products, blogs, aboutUs, faqs];
 
-  if (finalPath === "hacksawblades/index.html") {
-    for (let i = 0; i < tabs.length; i++) {
-      tabs[i].className.replace(" active-a", "");
-    }
-    home.className += " active-a";
-  }
-  if (finalPath === "pages/Blogs.html") {
-    for (let i = 0; i < tabs.length; i++) {
-      tabs[i].className.replace(" active-a", "");
-    }
-    blogs.className += " active-a";
-  }
-  if (finalPath === "pages/AboutUs.html") {
-    for (let i = 0; i < tabs.length; i++) {
-      tabs[i].className.replace(" active-a", "");
-    }
-    aboutUs.className += " active-a";
-  }
-  if (finalPath === "pages/FAQs.html") {
-    for (let i = 0; i < tabs.length; i++) {
-      tabs[i].className.replace(" active-a", "");
-    }
-    faqs.className += " active-a";
-  }
-  if (finalPath === "pages/Products.html") {
+  if (window.location.hash === "#products") {
     for (let i = 0; i < tabs.length; i++) {
       tabs[i].className.replace(" active-a", "");
     }
     products.className += " active-a";
+  } else if (finalPath === "hacksawblades/index.html") {
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].className.replace(" active-a", "");
+    }
+    home.className += " active-a";
+  } else if (finalPath === "pages/Blogs.html") {
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].className.replace(" active-a", "");
+    }
+    blogs.className += " active-a";
+  } else if (finalPath === "pages/AboutUs.html") {
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].className.replace(" active-a", "");
+    }
+    aboutUs.className += " active-a";
+  } else if (finalPath === "pages/FAQs.html") {
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].className.replace(" active-a", "");
+    }
+    faqs.className += " active-a";
   }
 }
 
@@ -319,7 +315,7 @@ function createHtmlContent() {
       <div class="nav-inner pages a-text" style="justify-content: space-around; background: ${brand};">
         <a id="home" href="https://www.spentohacksawblades.com/"><b>Home</b></a>
         <a id="aboutUs" href="https://www.spentohacksawblades.com/pages/AboutUs.html"><b>About Us</b></a>
-        <a id="products" href="https://www.spentohacksawblades.com/#our-services"><b>Products</b></a>
+        <a id="product" href="https://www.spentohacksawblades.com/#products"><b>Products</b></a>
         <a id="blogs" href="https://www.spentohacksawblades.com/pages/Blogs.html"><b>Blogs</b></a>
         <a id="faqs" href="https://www.spentohacksawblades.com/pages/FAQs.html"><b>FAQs</b></a>
       </div>
@@ -339,7 +335,7 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="24 TPI double sided 1 inch blades in black-yellow" loading="lazy" src=${
                 isPage ? "../assets/1.jpeg" : "assets/1.jpeg"
-              } height="auto">
+              } height="600px">
               <div class="slides-text">
               <br /><br />
               </div>
@@ -348,7 +344,7 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="24 TPI single sided half inch blades in black-yellow & black-blue" loading="lazy" src=${
                 isPage ? "../assets/2.jpeg" : "assets/2.jpeg"
-              } height="auto">
+              } height="600px">
               <div class="slides-text">
               </div>
             </div>
@@ -356,15 +352,15 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="18 TPI double sided 1 inch blades in black-silver" loading="lazy" src=${
                 isPage ? "../assets/3.jpg" : "assets/3.jpg"
-              } height="auto">
+              } height="600px">
               <div class="slides-text">
               </div>
             </div>
   
             <div class="slides fade">
-              <img class="slideImg" alt="blades in a PVC box wrapped in spento poly pouch wrapping" loading="lazy" src=${
+              <img class="slideImg" alt="blades in a PVC box wrapped in SPENTO poly pouch wrapping" loading="lazy" src=${
                 isPage ? "../assets/4.jpeg" : "assets/4.jpeg"
-              } height="auto">
+              } height="600px">
               <div class="slides-text">
               </div>
             </div>
@@ -372,15 +368,15 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="flexible oiled blades" loading="lazy" src=${
                 isPage ? "../assets/5.jpg" : "assets/5.jpg"
-              } height="auto">
+              } height="600px">
               <div class="slides-text">
               </div>
             </div>
 
             <div class="slides fade">
-              <img class="slideImg" alt="spento master packing of 30 packets" loading="lazy" src=${
+              <img class="slideImg" alt="SPENTO master packing of 30 packets" loading="lazy" src=${
                 isPage ? "../assets/6.jpeg" : "assets/6.jpeg"
-              } height="auto">
+              } height="600px">
               <div class="slides-text">
               </div>
             </div>
@@ -477,7 +473,7 @@ function createHtmlContent() {
     <div id="cards-list" class="contact" style="background: #ffffff;">
       <div class="iyohgi" style="text-align: center;">
         <div id="cards-content">
-          <div class="card flex-div col-div" style="background: #7f8060;">
+          <div class="card process-cards flex-div col-div" style="background: #7f8060;">
               <img src=${
                 isPage ? "../assets/objective.png" : "assets/objective.png"
               } alt="objective" width="50px" height="50px">
@@ -486,7 +482,7 @@ function createHtmlContent() {
                   <p>Our goal at Shree Paramhans Enterprises is to provide superior hacksaw blades crafted from High Carbon Steel, ensuring precision and durability for cutting metals, plastics, and more. Based in Bhiwani, Haryana, we serve global industries with reliable, high-performance solutions tailored to diverse cutting needs.</p>
               </div>
           </div>
-          <div class="card flex-div col-div" style="background: #7f8060;">
+          <div class="card process-cards flex-div col-div" style="background: #7f8060;">
               <img src=${
                 isPage
                   ? "../assets/quality_assurance.png"
@@ -497,7 +493,7 @@ function createHtmlContent() {
                   <p>We uphold stringent quality assurance measures at Shree Paramhans Enterprises, ensuring our hacksaw blades meet the highest standards for precision and durability. Crafted from High Carbon Steel, our products excel in cutting metals and plastics, guaranteeing reliability for industrial and commercial applications.</p>
               </div>
           </div>
-          <div class="card flex-div col-div" style="background: #7f8060;">
+          <div class="card process-cards flex-div col-div" style="background: #7f8060;">
               <img src=${
                 isPage ? "../assets/clients.png" : "assets/clients.png"
               } alt="clients" width="50px" height="50px">
@@ -538,11 +534,11 @@ function createHtmlContent() {
               <button id="submit-btn" type="submit">Submit</button>
             </form>
           </div>
-          <div class="fill-form-img-div" style="align-self: center;">
+          <!--<div class="fill-form-img-div" style="align-self: center;">
             <img alt="" loading="lazy" width="600px" height="auto" src=${
               isPage ? "../assets/2QueryForm.gif" : "assets/2QueryForm.gif"
             }></img>
-          </div>
+          </div>-->
         </div>  
       </div>
     </div>
@@ -553,11 +549,11 @@ function createHtmlContent() {
         <div class="iyohgi" style="text-align: center;">
         <h1 class="contact-details">Contact us for premium hacksaw blades. Fast delivery. Satisfaction guaranteed.</h1>
         <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
-            <div class="fill-form-img-div" style="align-self: center;">
-            <img alt="" loading="lazy" width="500px" height="auto" src=${
-              isPage ? "../assets/6ContactUs.gif" : "assets/6ContactUs.gif"
-            }></img>
-            </div>
+            <!--<div class="fill-form-img-div" style="align-self: center;">
+              <img alt="" loading="lazy" width="500px" height="auto" src=${
+                isPage ? "../assets/6ContactUs.gif" : "assets/6ContactUs.gif"
+              }></img>
+            </div>-->
             <div>
             <div class="igiuzk flex-div row-div">
             <a id="i2tpy3" aria-label="facebook" href="https://www.facebook.com/hacksawblades" target="_blank"><img alt="facebook page link" loading="lazy" id="i3gekg" height="49px" width="49px" src=${
@@ -585,7 +581,7 @@ function createHtmlContent() {
         <div class="igiuzk flex-div row-div a-text" style="gap: 20px;">
             <a href="https://www.spentohacksawblades.com/"><b>Home</b></a>
             <a href="https://www.spentohacksawblades.com/pages/AboutUs.html"><b>About Us</b></a>
-            <a href="https://www.spentohacksawblades.com/#our-services"><b>Products</b></a>
+            <a href="https://www.spentohacksawblades.com/#products"><b>Products</b></a>
             <a href="https://www.spentohacksawblades.com/pages/Blogs.html"><b>Blogs</b></a>
             <a href="https://www.spentohacksawblades.com/pages/FAQs.html"><b>FAQs</b></a>
         </div><br />
