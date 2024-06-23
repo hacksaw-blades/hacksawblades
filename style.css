@@ -1,15 +1,7 @@
 *{
     box-sizing:border-box;
     margin:0;
-    font-family: 'Handle Gothic BT', Arial, sans-serif;
-  }
-  @font-face {
-    font-family: 'Handle Gothic BT';
-    src: url('fonts/HandelGo.ttf') format('truetype'),
-         url('fonts/HandelGothic\ Regular.ttf') format('truetype');
-    /* Add more src lines for other formats if available */
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'Arial, sans-serif';
   }
   .navbar-cont{
     width:100%;
@@ -474,7 +466,7 @@
       margin:20px 0px 57px 0px;
     }
     .fill-form-img-div>img{
-      width: 500px;
+      width: 350px;
       object-fit: cover;
     }
   }
@@ -553,7 +545,7 @@
       gap: 5px;
     }
     #contact-info {
-      flex-direction: row;
+      flex-direction: column;
       gap: 5px;
     }
     .fill-form-img-div>img, .slideImg{

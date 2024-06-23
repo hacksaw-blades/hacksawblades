@@ -135,15 +135,15 @@ function setActiveTab() {
 
 function getAboutUsContent(isPage) {
   return `
+    <div class="fill-form-img-div" style="text-align: center;">
+      <img alt="" loading="lazy" width="400px" height="auto" src=${
+        isPage ? "../assets/logo-favicon.png" : "assets/logo-favicon.png"
+      }></img>
+    </div>
     <div id="about-us" class="contact" style="background: #7f8060;">
       <div class="iyohgi" style="text-align: center;">
         <h1 class="i78bq-2-3">About Us - Shree Paramhans Enterprises</h1>
         <div id="city-section-content">
-          <div class="fill-form-img-div" style="align-self: center;">
-            <img alt="" loading="lazy" width="400px" height="auto" src=${
-              isPage ? "../assets/ABOUTUS.jpg" : "assets/ABOUTUS.jpg"
-            }></img>
-          </div>
           <div style="text-align: left;">
             <p>Welcome to Shree Paramhans Enterprises, a renowned leader in the manufacturing of premium hacksaw blades. With ${
               new Date().getFullYear() - new Date("1998-06-20").getFullYear()
@@ -162,15 +162,15 @@ function getAboutUsContent(isPage) {
 
 function getBlogsContent(isPage) {
   return `
+    <div class="fill-form-img-div" style="text-align: center;">
+      <img alt="" loading="lazy" width="400px" height="auto" src=${
+        isPage ? "../assets/blogs.jpg" : "assets/blogs.jpg"
+      }></img>
+    </div>
     <div id="blogs" class="contact" style="background: #7f8060;">
       <div class="iyohgi" style="text-align: center;">
       <h1 class="i78bq-2-3">Choosing the Best Hacksaw Blades for Your Cutting Needs</h1>
         <div id="city-section-content">
-          <div class="fill-form-img-div" style="align-self: center;">
-            <img alt="" loading="lazy" width="400px" height="auto" src=${
-              isPage ? "../assets/BLOG.jpg" : "assets/BLOG.jpg"
-            }></img>
-          </div>
           <div style="text-align: left;">
             <p>
             Are you looking for reliable hacksaw blades that deliver precision and durability? At Shree Paramhans Enterprises, we understand the importance of selecting the right tools for your cutting tasks. Our range of high-quality hacksaw blades, crafted from premium materials, ensures superior performance in cutting metals, plastics, and more. Whether you're in an industrial facility or a commercial workshop, our blades are designed to meet diverse needs with efficiency and reliability. Explore our guide to choosing the best hacksaw blades for optimal results in your operations.
@@ -223,15 +223,15 @@ function collapsibleProcessing() {
 
 function getFAQsContent(isPage) {
   return `
-    <div id="faq" class="contact" style="background: #7f8060;">
+    <div class="fill-form-img-div" style="text-align: center; background: #eddbc4;">
+      <img alt="" loading="lazy" width="400px" height="auto" src=${
+        isPage ? "../assets/faqs.jpg" : "assets/faqs.jpg"
+      }></img>
+    </div>
+    <div id="faq" class="contact" style="background: #ffffff;">
       <div class="iyohgi" style="text-align: center;">
         <h1 class="i78bq-2-3 contact-details">FAQs</h1>
         <div id="city-section-content">
-          <div class="fill-form-img-div" style="align-self: center;">
-            <img alt="" loading="lazy" width="400px" height="auto" src=${
-              isPage ? "../assets/FAQs.jpg" : "assets/FAQs.jpg"
-            }></img>
-          </div>
           <div class="contact-details" style="text-align: left;">
             <button type="button" class="collapsible">What types of hacksaw blades do you offer?</button>
             <div class="content">
@@ -416,7 +416,7 @@ function createHtmlContent() {
             isPage ? "../assets/2.jpeg" : "assets/2.jpeg"
           } alt="Single Sided Edge" style="width:100%">
           <div class="container">
-              <h4><b>Single Sided Edge</b></h4><br />
+              <h4 style="text-align: center;"><b>Single Sided Edge</b></h4><br />
               <p>
                 <ul class="container">
                   <li>All hard low alloy blades made from high carbon steel</li>
@@ -434,7 +434,7 @@ function createHtmlContent() {
             isPage ? "../assets/1.jpeg" : "assets/1.jpeg"
           } alt="Double Sided Edge" style="width:100%">
           <div class="container">
-              <h4><b>Double Sided Edge</b></h4><br />
+              <h4 style="text-align: center;"><b>Double Sided Edge</b></h4><br />
               <p>
                 <ul class="container">
                   <li>All hard low alloy blades made from high carbon steel</li>
@@ -452,7 +452,7 @@ function createHtmlContent() {
             isPage ? "../assets/5.jpg" : "assets/5.jpg"
           } alt="Flexible Blades" style="width:100%">
           <div class="container">
-              <h4><b>Flexible Blades</b></h4><br />
+              <h4 style="text-align: center;"><b>Flexible Blades</b></h4><br />
               <p>
                 <ul class="container">
                   <li>Fully Flexible Blades</li>
