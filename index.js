@@ -409,7 +409,7 @@ function createHtmlContent() {
 
     <div id="products" class="contact" style="background: #7f8060;">
       <div class="iyohgi">
-      <h1 class="i78bq-2-3 contact-details" style="text-align: center;">Our Products</h1>
+      <h1 class="i78bq-2-3" style="text-align: center;">Our Products</h1>
       <div class="row">
         <div class="column">
           <img src=${
@@ -508,7 +508,7 @@ function createHtmlContent() {
   
     <div id="form-detail" class="contact" style="background: #7f8060;">
       <div class="iyohgi" class="flex-div col-div" style="align-items: unset;">
-        <p class="i78bq-2-3 contact-details" style="font-size: x-large; text-align: center; border-bottom: 70px;"></b></p>
+        <p class="i78bq-2-3" style="font-size: x-large; text-align: center; border-bottom: 70px;"><b>SPENTO Hacksaw Blades: Request a Quote for Competitive Pricing!</b></p>
         <div class="inquire-tos-content">
           <div id="customer-form">
             <form id="inquiry-form" class="flex-div col-div" style="align-items: flex-start;">
@@ -518,8 +518,8 @@ function createHtmlContent() {
               <input id="phone" name="phone" type="tel" placeholder="Enter Phone" autocomplete="off" required pattern="[0-9]{10}"></input>
               <label for="name">Email*</label>
               <input id="email" name="email" type="email" placeholder="Enter Email" autocomplete="off" required></input>
-              <label for="name">Leave a Message</label>
-              <textarea id="msg" name="msg" rows="3" placeholder="Enter message..." width="100%"></textarea>
+              <label for="name">Product Specifications*</label>
+              <textarea id="msg" name="msg" rows="3" required placeholder="Enter Product Specifications" width="100%"></textarea>
               <input id="inquiryDate" name="inquiryDate" value=${Intl.DateTimeFormat(
                 "en-GB",
                 {
