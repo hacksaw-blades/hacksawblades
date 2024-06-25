@@ -1,7 +1,7 @@
 *{
     box-sizing:border-box;
     margin:0;
-    font-family: 'Arial, sans-serif';
+    font-family: Roboto, sans-serif;
   }
   .navbar-cont{
     width:100%;
@@ -214,13 +214,14 @@
   }
   /* Add some padding inside the card container */
   .container {
-    padding: 2px 16px;
+    padding: 15px 16px;
+    font-size: 18px;
   }
 
   .process-cards{
     /* min-width: 200px;
     max-width: 530px; */
-    height: 260px;
+    height: 300px;
     padding: 10px;
     text-align: center;
   }
@@ -231,7 +232,7 @@
     font-size: 14px;
     color: black;
     border-radius: 10px;
-    height: 480px;
+    height: 380px;
     width: 30%;
     border: 2px solid black;
   }
@@ -340,8 +341,9 @@
   }
 
   .slideImg {
-    width: -webkit-fill-available;
+    /* width: -webkit-fill-available; */
     object-fit: cover;
+    background: white;
   }
 
   /* Caption text */
@@ -452,7 +454,7 @@
 
   @media (max-width: 992px){
     .process-cards{
-      height: 290px;
+      height: 420px;
       padding: 10px;
       text-align: center;
     }
@@ -496,6 +498,7 @@
       gap: 10px;
     }
     .process-cards{
+      height: 350px;
       align-self: center !important;
     }
     #cards-content{

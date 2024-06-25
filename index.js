@@ -27,7 +27,7 @@ function closeModal() {
 
 function processFormSubmission(e) {
   e.preventDefault(); //prevent page reload on submitting form
-  validateDateField(); //if date validation fails then onSubmit will not execute further
+  // validateDateField(); //if date validation fails then onSubmit will not execute further
   const formEle = document.getElementById("inquiry-form");
   const submitBtn = document.getElementById("submit-btn");
   submitBtn.disabled = true;
@@ -55,20 +55,49 @@ function updateUI(tryOrCatch, submitBtn, formEle) {
 }
 
 function callAPI(formEle, submitBtn) {
-  const formData = new FormData(formEle);
-  const URL = "";
+  // const formData = new FormData(formEle);
+  // const URL = "";
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let msg = document.getElementById("msg").value;
+  let contact = "+919729568340";
 
-  fetch(URL, {
-    method: "POST",
-    body: formData,
-    mode: "no-cors",
-  })
-    .then(() => {
-      updateUI("try", submitBtn, formEle);
-    })
-    .catch(() => {
-      updateUI("catch", submitBtn, formEle);
-    });
+  let encodedMessage = encodeURIComponent(
+    "Name: " +
+      name +
+      "\n" +
+      "Phone: " +
+      phone +
+      "\n" +
+      "Message: " +
+      msg
+  );
+
+  let link;
+
+  // Check if user is on a mobile device
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    link = `whatsapp://send?phone=${contact}&text=${encodedMessage}`;
+  } else {
+    // Desktop device
+    link = `https://web.whatsapp.com/send?phone=${contact}&text=${encodedMessage}`;
+  }
+  window.open(link, '_blank');
+  // fetch(URL, {
+  //   method: "POST",
+  //   body: formData,
+  //   mode: "no-cors",
+  // })
+  //   .then(() => {
+  //     updateUI("try", submitBtn, formEle);
+  //   })
+  //   .catch(() => {
+  //     updateUI("catch", submitBtn, formEle);
+  //   });
 }
 
 function currentSlide(slideClassName, dotClassName, slideIndex) {
@@ -290,15 +319,15 @@ function createHtmlContent() {
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="iu9w" class="navbar-cont" style="background: #fffbf6;">
         <div class="nav-inner" style="color: white; background: ${brand};">
-            <span style="font-size: 14px;">GST NO.: 06AGXPG5905D1ZC</span>
-            <span style="font-size: 14px;">TRADEMARK NO.: 2962122</span>
+            <span style="font-size: 14px;"><b>GST NO.: 06AGXPG5905D1ZC</b></span>
+            <span style="font-size: 14px;"><b>REGD TRADEMARK NO.: 2962122</b></span>
         </div>
       <div id="ibulz" class="nav-inner">
         <a class="flex-div row-div" href="https://www.spentohacksawblades.com/">
           <img id="logo" alt="" src=${
             isPage ? "../assets/logo-favicon.png" : "assets/logo-favicon.png"
-          } width="auto" height="80px"></img>
-          <h1 class="heading">Shree Paramhans Enterprises</h1>
+          } width="auto" height="60px"></img>
+          <span class="heading" style="font-size: 25px;"><b>Shree Paramhans Enterprises</b></span>
         </a>
         <div id="contact-info">
           <a aria-label="mobile" class="flex-div row-div" href=tel:+919416059179><img alt="" src=${
@@ -335,7 +364,7 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="24 TPI double sided 1 inch blades in black-yellow" loading="lazy" src=${
                 isPage ? "../assets/1.jpeg" : "assets/1.jpeg"
-              } height="600px">
+              } height="400px" width: 50%;>
               <div class="slides-text">
               <br /><br />
               </div>
@@ -344,7 +373,7 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="24 TPI single sided half inch blades in black-yellow & black-blue" loading="lazy" src=${
                 isPage ? "../assets/2.jpeg" : "assets/2.jpeg"
-              } height="600px">
+              } height="400px" width: 50%;>
               <div class="slides-text">
               </div>
             </div>
@@ -352,7 +381,7 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="18 TPI double sided 1 inch blades in black-silver" loading="lazy" src=${
                 isPage ? "../assets/3.jpg" : "assets/3.jpg"
-              } height="600px">
+              } height="400px" width: 50%;>
               <div class="slides-text">
               </div>
             </div>
@@ -360,7 +389,7 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="blades in a PVC box wrapped in SPENTO poly pouch wrapping" loading="lazy" src=${
                 isPage ? "../assets/4.jpeg" : "assets/4.jpeg"
-              } height="600px">
+              } height="400px" width: 50%;>
               <div class="slides-text">
               </div>
             </div>
@@ -368,7 +397,7 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="flexible oiled blades" loading="lazy" src=${
                 isPage ? "../assets/5.jpg" : "assets/5.jpg"
-              } height="600px">
+              } height="400px" width: 50%;>
               <div class="slides-text">
               </div>
             </div>
@@ -376,7 +405,7 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="SPENTO master packing of 30 packets" loading="lazy" src=${
                 isPage ? "../assets/6.jpeg" : "assets/6.jpeg"
-              } height="600px">
+              } height="400px" width: 50%;>
               <div class="slides-text">
               </div>
             </div>
@@ -399,7 +428,7 @@ function createHtmlContent() {
     <div id="intro" class="contact" style="background: #ffffff;">
       <div class="iyohgi" style="text-align: center;">
         <h1 class="i78bq-2-3 contact-details">Backed by Cutting Edge Technology</h1>
-        <p>
+        <p style="font-size: 18px;">
         Welcome to <b>Shree Paramhans Enterprises</b>, your trusted partner in the hacksaw blades industry. With ${
           new Date().getFullYear() - new Date("1998-06-20").getFullYear()
         } years of expertise, we specialize in manufacturing high-quality <b>hacksaw blades</b> engineered for precision and durability using <b>high carbon steel</b> as raw material. Our blades are crafted from premium materials to ensure superior performance in cutting metals, plastics, and more. Based in <b>Bhiwani, Haryana</b>, we serve a global clientele, providing efficient cutting solutions tailored to diverse industrial and commercial applications. Discover how our advanced hacksaw blades can optimize your cutting operations and elevate productivity. Contact us today to explore our extensive range and experience the difference in quality and reliability.
@@ -407,7 +436,7 @@ function createHtmlContent() {
       </div>
     </div>
 
-    <div id="products" class="contact" style="background: #7f8060;">
+    <div id="products" class="contact" style="background: #403f2d; color: white;">
       <div class="iyohgi">
       <h1 class="i78bq-2-3" style="text-align: center;">Our Products</h1>
       <div class="row">
@@ -416,8 +445,7 @@ function createHtmlContent() {
             isPage ? "../assets/2.jpeg" : "assets/2.jpeg"
           } alt="Single Sided Edge" style="width:100%">
           <div class="container">
-              <h4 style="text-align: center;"><b>Single Sided Edge</b></h4><br />
-              <p>
+              <h3 style="text-align: center;"><b>Single Sided Edge</b></h3>
                 <ul class="container">
                   <li>All hard low alloy blades made from high carbon steel</li>
                   <li>Oven baked paint</li>
@@ -426,7 +454,6 @@ function createHtmlContent() {
                   <li>Thickness - 0.48 MM to 0.63 MM</li>
                   <li>Sharp teeth with accurate pitch in 14, 18 & 24 TPI</li>
                 </ul>
-              </p>
           </div>
         </div>
         <div class="column">
@@ -434,8 +461,7 @@ function createHtmlContent() {
             isPage ? "../assets/1.jpeg" : "assets/1.jpeg"
           } alt="Double Sided Edge" style="width:100%">
           <div class="container">
-              <h4 style="text-align: center;"><b>Double Sided Edge</b></h4><br />
-              <p>
+              <h3 style="text-align: center;"><b>Double Sided Edge</b></h3>
                 <ul class="container">
                   <li>All hard low alloy blades made from high carbon steel</li>
                   <li>Oven baked paint</li>
@@ -444,7 +470,6 @@ function createHtmlContent() {
                   <li>Thickness - 0.48 MM to 0.63 MM</li>
                   <li>Sharp teeth with accurate pitch in 14, 18 & 24 TPI</li>
                 </ul>
-              </p>
           </div>
         </div>
         <div class="column">
@@ -452,8 +477,7 @@ function createHtmlContent() {
             isPage ? "../assets/5.jpg" : "assets/5.jpg"
           } alt="Flexible Blades" style="width:100%">
           <div class="container">
-              <h4 style="text-align: center;"><b>Flexible Blades</b></h4><br />
-              <p>
+              <h3 style="text-align: center;"><b>Flexible Blades</b></h3>
                 <ul class="container">
                   <li>Fully Flexible Blades</li>
                   <li>Finish - anti rust oiled blades</li>
@@ -463,7 +487,6 @@ function createHtmlContent() {
                   <li>2-in-1 - will have edge on both sides with 10MM to 12.5 MM width</li>
                   <li>Bamboo - will have 8 TPI edge at one side and 14, 18 or 24 TPI at other side</li>
                 </ul>
-              </p>
           </div>
         </div> 
         </div> 
@@ -516,8 +539,6 @@ function createHtmlContent() {
               <input id="name" name="name" placeholder="Enter Name" autocomplete="off" required></input>
               <label for="phone">Phone*</label>
               <input id="phone" name="phone" type="tel" placeholder="Enter Phone" autocomplete="off" required pattern="[0-9]{10}"></input>
-              <label for="name">Email*</label>
-              <input id="email" name="email" type="email" placeholder="Enter Email" autocomplete="off" required></input>
               <label for="name">Product Specifications*</label>
               <textarea id="msg" name="msg" rows="3" required placeholder="Enter Product Specifications" width="100%"></textarea>
               <input id="inquiryDate" name="inquiryDate" value=${Intl.DateTimeFormat(
