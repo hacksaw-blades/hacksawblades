@@ -9,29 +9,29 @@ function getPathAndLocation() {
 
 const { finalPath, isPage } = getPathAndLocation();
 
-function showModal() {
-  const modal = document.getElementById("modal");
-  modal.style.display = "block";
-}
+// function showModal() {
+//   const modal = document.getElementById("modal");
+//   modal.style.display = "block";
+// }
 
-function closeModal() {
-  const modal = document.getElementById("modal");
+// function closeModal() {
+//   const modal = document.getElementById("modal");
 
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-}
+//   // When the user clicks anywhere outside of the modal, close it
+//   window.onclick = function (event) {
+//     if (event.target == modal) {
+//       modal.style.display = "none";
+//     }
+//   };
+// }
 
 function processFormSubmission(e) {
   e.preventDefault(); //prevent page reload on submitting form
   // validateDateField(); //if date validation fails then onSubmit will not execute further
-  const formEle = document.getElementById("inquiry-form");
+  // const formEle = document.getElementById("inquiry-form");
   const submitBtn = document.getElementById("submit-btn");
   submitBtn.disabled = true;
-  callAPI(formEle, submitBtn);
+  callAPI(submitBtn);
 }
 
 function onSubmit() {
@@ -39,22 +39,22 @@ function onSubmit() {
   formEle?.addEventListener("submit", processFormSubmission);
 }
 
-function updateUI(tryOrCatch, submitBtn, formEle) {
-  formEle.removeEventListener("submit", processFormSubmission);
-  const modalImg = document.getElementById("modal-img");
-  const modalP = document.getElementById("modal-p");
-  if (tryOrCatch === "try") {
-    modalImg.src = isPage ? "../assets/tick.svg" : "assets/tick.svg";
-    modalP.innerHTML = "Thank you! <br /> We will contact you shortly.";
-  } else {
-    modalImg.src = isPage ? "../assets/cross.svg" : "assets/cross.svg";
-    modalP.innerHTML = "Unable to send request!";
-  }
-  showModal();
-  submitBtn.disabled = false;
-}
+// function updateUI(tryOrCatch, submitBtn, formEle) {
+//   formEle.removeEventListener("submit", processFormSubmission);
+//   const modalImg = document.getElementById("modal-img");
+//   const modalP = document.getElementById("modal-p");
+//   if (tryOrCatch === "try") {
+//     modalImg.src = isPage ? "../assets/tick.svg" : "assets/tick.svg";
+//     modalP.innerHTML = "Thank you! <br /> We will contact you shortly.";
+//   } else {
+//     modalImg.src = isPage ? "../assets/cross.svg" : "assets/cross.svg";
+//     modalP.innerHTML = "Unable to send request!";
+//   }
+//   showModal();
+//   submitBtn.disabled = false;
+// }
 
-function callAPI(formEle, submitBtn) {
+function callAPI(submitBtn) {
   // const formData = new FormData(formEle);
   // const URL = "";
   let name = document.getElementById("name").value;
@@ -87,6 +87,11 @@ function callAPI(formEle, submitBtn) {
     link = `https://web.whatsapp.com/send?phone=${contact}&text=${encodedMessage}`;
   }
   window.open(link, '_blank');
+
+  name.innerHTML = '';
+  phone.innerHTML = '';
+  msg.innerHTML = '';
+  submitBtn.disabled = false;
   // fetch(URL, {
   //   method: "POST",
   //   body: formData,
@@ -331,6 +336,9 @@ function createHtmlContent() {
         </a>
         <div id="contact-info">
           <a aria-label="mobile" class="flex-div row-div" href=tel:+919416059179><img alt="" src=${
+            isPage ? "../assets/whatsappIcon.svg" : "assets/whatsappIcon.svg"
+          } width="22px" height="22px"></img>
+          <img alt="" src=${
             isPage ? "../assets/phone.svg" : "assets/phone.svg"
           } width="20px" height="20px"></img>
             <p class="header-font-size" style="font-weight: 700; color: ${brand}">+91-9416059179</p></a>
@@ -364,7 +372,7 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="24 TPI double sided 1 inch blades in black-yellow" loading="lazy" src=${
                 isPage ? "../assets/1.jpeg" : "assets/1.jpeg"
-              } height="400px" width: 50%;>
+              } height="400px">
               <div class="slides-text">
               <br /><br />
               </div>
@@ -373,7 +381,7 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="24 TPI single sided half inch blades in black-yellow & black-blue" loading="lazy" src=${
                 isPage ? "../assets/2.jpeg" : "assets/2.jpeg"
-              } height="400px" width: 50%;>
+              } height="400px">
               <div class="slides-text">
               </div>
             </div>
@@ -381,7 +389,7 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="18 TPI double sided 1 inch blades in black-silver" loading="lazy" src=${
                 isPage ? "../assets/3.jpg" : "assets/3.jpg"
-              } height="400px" width: 50%;>
+              } height="400px">
               <div class="slides-text">
               </div>
             </div>
@@ -389,7 +397,7 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="blades in a PVC box wrapped in SPENTO poly pouch wrapping" loading="lazy" src=${
                 isPage ? "../assets/4.jpeg" : "assets/4.jpeg"
-              } height="400px" width: 50%;>
+              } height="400px">
               <div class="slides-text">
               </div>
             </div>
@@ -397,7 +405,7 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="flexible oiled blades" loading="lazy" src=${
                 isPage ? "../assets/5.jpg" : "assets/5.jpg"
-              } height="400px" width: 50%;>
+              } height="400px">
               <div class="slides-text">
               </div>
             </div>
@@ -405,7 +413,7 @@ function createHtmlContent() {
             <div class="slides fade">
               <img class="slideImg" alt="SPENTO master packing of 30 packets" loading="lazy" src=${
                 isPage ? "../assets/6.jpeg" : "assets/6.jpeg"
-              } height="400px" width: 50%;>
+              } height="400px">
               <div class="slides-text">
               </div>
             </div>
@@ -609,12 +617,12 @@ function createHtmlContent() {
         <p id="iy2lbi">© ${new Date().getFullYear()} powered by Shree Paramhans Enterprises</p>
     </div>
 
-    <div id="modal" class="modal">
+    <!--<div id="modal" class="modal">
         <div class="modal-content flex-div col-div">
         <img alt="" loading="lazy" id="modal-img" width="50px" height="50px"></img>
         <p id="modal-p" style="text-align: center";></p>
         </div>
-    </div>
+    </div>-->
   `;
 }
 
@@ -637,7 +645,7 @@ if (isPage) collapsibleProcessing();
 let slidesTimeout;
 let slideIndex = 0;
 if (!isPage) {
-  closeModal();
+  // closeModal();
   onSubmit();
   showSlides("slides", "slides-dot", slideIndex);
 }

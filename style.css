@@ -471,6 +471,11 @@
       width: 350px;
       object-fit: cover;
     }
+    .slideImg{
+      object-fit: contain;
+      width: 70%;
+      height: 340px
+    }
   }
   @media (max-width:768px){
     .column {
@@ -482,6 +487,10 @@
     .fill-form-img-div>img{
       width: 275px;
       object-fit: cover;
+    }
+    .slideImg{
+      object-fit: contain;
+      width: 100%;
     }
     #cards-content{
       flex-direction: column;
@@ -509,7 +518,7 @@
     .service-cont{
       white-space: unset;
     }
-    .fill-form-img-div>img{
+    .fill-form-img-div>img, slideImg{
       width: 100%;
       height: auto;
       object-fit: cover;
@@ -553,8 +562,8 @@
     }
     .fill-form-img-div>img, .slideImg{
       width: 100%;
-      height: 215px;
-      object-fit: cover;
+      height: 200px;
+      object-fit: contain;
     }
     #logo{
       height: 50px;
@@ -593,7 +602,7 @@
     .fill-form-img-div>img, .slideImg{
       width: 100%;
       height: 165px;
-      object-fit: cover;
+      object-fit: contain;
     }
     .process-card-parent{
       padding: 5px !important;
