@@ -226,6 +226,12 @@
     text-align: center;
   }
 
+  .inquire-tos-content{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
   #customer-form{
     padding: 20px;
     background: whitesmoke;
@@ -342,7 +348,8 @@
 
   .slideImg {
     /* width: -webkit-fill-available; */
-    object-fit: cover;
+    width: 800px;
+    object-fit: contain;
     background: white;
   }
 
@@ -468,7 +475,7 @@
       margin:20px 0px 57px 0px;
     }
     .fill-form-img-div>img{
-      width: 350px;
+      width: 200px;
       object-fit: cover;
     }
     .slideImg{
@@ -485,7 +492,7 @@
       width: 40%;
     }
     .fill-form-img-div>img{
-      width: 275px;
+      width: 200px;
       object-fit: cover;
     }
     .slideImg{
@@ -494,6 +501,11 @@
     }
     #cards-content{
       flex-direction: column;
+      gap: 30px;
+      justify-content: center;
+    }
+    .inquire-tos-content{
+      flex-direction: row;
       gap: 30px;
       justify-content: center;
     }
@@ -510,7 +522,7 @@
       height: 350px;
       align-self: center !important;
     }
-    #cards-content{
+    #cards-content, .inquire-tos-content{
       flex-direction: column;
       gap: 30px;
       justify-content: center;
@@ -518,7 +530,12 @@
     .service-cont{
       white-space: unset;
     }
-    .fill-form-img-div>img, slideImg{
+    .fill-form-img-div>img{
+      width: 200px;
+      height: auto;
+      object-fit: cover;
+    }
+    .slideImg{
       width: 100%;
       height: auto;
       object-fit: cover;
@@ -623,6 +640,11 @@
       flex-direction: column;
       gap: 30px;
       justify-content: center;
+    }
+    .process-cards{
+      height: 500px;
+      padding: 10px;
+      text-align: center;
     }
   }
   

@@ -170,7 +170,7 @@ function setActiveTab() {
 function getAboutUsContent(isPage) {
   return `
     <div class="fill-form-img-div" style="text-align: center;">
-      <img alt="" loading="lazy" width="400px" height="auto" src=${
+      <img alt="" loading="lazy" width="200px" height="auto" src=${
         isPage ? "../assets/logo-favicon.png" : "assets/logo-favicon.png"
       }></img>
     </div>
@@ -258,7 +258,7 @@ function collapsibleProcessing() {
 function getFAQsContent(isPage) {
   return `
     <div class="fill-form-img-div" style="text-align: center; background: #eddbc4;">
-      <img alt="" loading="lazy" width="400px" height="auto" src=${
+      <img alt="" loading="lazy" width="220px" height="auto" src=${
         isPage ? "../assets/faqs.jpg" : "assets/faqs.jpg"
       }></img>
     </div>
@@ -325,7 +325,7 @@ function createHtmlContent() {
     <div id="iu9w" class="navbar-cont" style="background: #fffbf6;">
         <div class="nav-inner" style="color: white; background: ${brand};">
             <span style="font-size: 14px;"><b>GST NO.: 06AGXPG5905D1ZC</b></span>
-            <span style="font-size: 14px;"><b>REGD TRADEMARK NO.: 2962122</b></span>
+            <span style="font-size: 14px;"><b>REGD. TRADEMARK NO.: 2962122</b></span>
         </div>
       <div id="ibulz" class="nav-inner">
         <a class="flex-div row-div" href="https://www.spentohacksawblades.com/">
@@ -412,7 +412,7 @@ function createHtmlContent() {
 
             <div class="slides fade">
               <img class="slideImg" alt="SPENTO master packing of 30 packets" loading="lazy" src=${
-                isPage ? "../assets/6.jpeg" : "assets/6.jpeg"
+                isPage ? "../assets/6.jpg" : "assets/6.jpg"
               } height="400px">
               <div class="slides-text">
               </div>
@@ -439,7 +439,7 @@ function createHtmlContent() {
         <p style="font-size: 18px;">
         Welcome to <b>Shree Paramhans Enterprises</b>, your trusted partner in the hacksaw blades industry. With ${
           new Date().getFullYear() - new Date("1998-06-20").getFullYear()
-        } years of expertise, we specialize in manufacturing high-quality <b>hacksaw blades</b> engineered for precision and durability using <b>high carbon steel</b> as raw material. Our blades are crafted from premium materials to ensure superior performance in cutting metals, plastics, and more. Based in <b>Bhiwani, Haryana</b>, we serve a global clientele, providing efficient cutting solutions tailored to diverse industrial and commercial applications. Discover how our advanced hacksaw blades can optimize your cutting operations and elevate productivity. Contact us today to explore our extensive range and experience the difference in quality and reliability.
+        } years of expertise, we specialize in manufacturing high-quality <b>hacksaw blades</b> engineered for precision and durability. Our blades are crafted from <b>high carbon steel</b> to ensure superior performance in cutting metals, plastics, and more. Based in <b>Bhiwani, Haryana</b>, we serve a global clientele, providing efficient cutting solutions tailored to diverse industrial and commercial applications. Discover how our advanced <b>SPENTO hacksaw blades</b> can optimize your cutting operations and elevate productivity. Contact us today to explore our extensive range and experience the difference in quality and reliability.
         </p>
       </div>
     </div>
@@ -537,7 +537,7 @@ function createHtmlContent() {
       </div>
     </div>
   
-    <div id="form-detail" class="contact" style="background: #7f8060;">
+    <div id="form-detail" class="contact" style="background: white;">
       <div class="iyohgi" class="flex-div col-div" style="align-items: unset;">
         <p class="i78bq-2-3" style="font-size: x-large; text-align: center; border-bottom: 70px;"><b>SPENTO Hacksaw Blades: Request a Quote for Competitive Pricing!</b></p>
         <div class="inquire-tos-content">
@@ -563,11 +563,11 @@ function createHtmlContent() {
               <button id="submit-btn" type="submit">Submit</button>
             </form>
           </div>
-          <!--<div class="fill-form-img-div" style="align-self: center;">
+          <div class="fill-form-img-div" style="align-self: center;">
             <img alt="" loading="lazy" width="600px" height="auto" src=${
-              isPage ? "../assets/2QueryForm.gif" : "assets/2QueryForm.gif"
+              isPage ? "../assets/inquiryform.jpg" : "assets/inquiryform.jpg"
             }></img>
-          </div>-->
+          </div>
         </div>  
       </div>
     </div>
