@@ -8,7 +8,6 @@
     position:sticky;
     z-index:100;
     top:0;
-    /* padding:10px; */
     background:rgb(255,255,255);
     display:flex;
     flex-direction: column;
@@ -206,7 +205,6 @@
   .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    /* padding: 10px; */
     border-radius: 5px;
   }
   .card:hover {
@@ -219,16 +217,14 @@
   }
 
   .process-cards{
-    /* min-width: 200px;
-    max-width: 530px; */
-    height: 300px;
+    height: 400px;
     padding: 10px;
     text-align: center;
   }
 
   .inquire-tos-content{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
   }
 
@@ -461,7 +457,7 @@
 
   @media (max-width: 992px){
     .process-cards{
-      height: 420px;
+      height: 480px;
       padding: 10px;
       text-align: center;
     }
@@ -473,6 +469,10 @@
     }
     .service-info{
       margin:20px 0px 57px 0px;
+    }
+    .inquire-tos-content>.fill-form-img-div>img{
+      width: 400px;
+      object-fit: cover;
     }
     .fill-form-img-div>img{
       width: 200px;
@@ -490,6 +490,10 @@
     }
     #customer-form{
       width: 40%;
+    }
+    .inquire-tos-content>.fill-form-img-div>img{
+      width: 300px;
+      object-fit: cover;
     }
     .fill-form-img-div>img{
       width: 200px;
@@ -569,7 +573,6 @@
       font-size: 18px;
     }
     .nav-inner{
-      /* width:90%; */
       flex-direction: column;
       gap: 5px;
     }
@@ -608,7 +611,6 @@
       font-size: 14px;
     }
     .nav-inner{
-      /* width:90%; */
       flex-direction: column;
       gap: 5px;
     }
