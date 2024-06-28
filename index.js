@@ -60,7 +60,7 @@ function callAPI(submitBtn) {
   let name = document.getElementById("name").value;
   let phone = document.getElementById("phone").value;
   let msg = document.getElementById("msg").value;
-  let contact = "+919729568340";
+  let contact = "+919416059179";
 
   let encodedMessage = encodeURIComponent(
     "Name: " +
