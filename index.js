@@ -167,14 +167,14 @@ function setActiveTab() {
   }
 }
 
-function getAboutUsContent(isPage) {
+function getAboutUsContent(isPage, brand) {
   return `
     <div class="fill-form-img-div" style="text-align: center;">
-      <img alt="" loading="lazy" width="200px" height="auto" src=${
+      <img alt="" width="200px" height="auto" src=${
         isPage ? "../assets/logo-favicon.png" : "assets/logo-favicon.png"
       }></img>
     </div>
-    <div id="about-us" class="contact" style="background: #7f8060;">
+    <div id="about-us" class="contact" style="background: ${brand}; color: white">
       <div class="iyohgi" style="text-align: center;">
         <h1 class="i78bq-2-3">About Us - Shree Paramhans Enterprises</h1>
         <div id="city-section-content">
@@ -194,14 +194,14 @@ function getAboutUsContent(isPage) {
     `;
 }
 
-function getBlogsContent(isPage) {
+function getBlogsContent(isPage, brand) {
   return `
     <div class="fill-form-img-div" style="text-align: center;">
-      <img alt="" loading="lazy" width="400px" height="auto" src=${
+      <img alt="" width="400px" height="auto" src=${
         isPage ? "../assets/blogs.jpg" : "assets/blogs.jpg"
       }></img>
     </div>
-    <div id="blogs" class="contact" style="background: #7f8060;">
+    <div id="blogs" class="contact" style="background: ${brand}; color: white">
       <div class="iyohgi" style="text-align: center;">
       <h1 class="i78bq-2-3">Choosing the Best Hacksaw Blades for Your Cutting Needs</h1>
         <div id="city-section-content">
@@ -210,7 +210,6 @@ function getBlogsContent(isPage) {
             Are you looking for reliable hacksaw blades that deliver precision and durability? At Shree Paramhans Enterprises, we understand the importance of selecting the right tools for your cutting tasks. Our range of high-quality hacksaw blades, crafted from premium materials, ensures superior performance in cutting metals, plastics, and more. Whether you're in an industrial facility or a commercial workshop, our blades are designed to meet diverse needs with efficiency and reliability. Explore our guide to choosing the best hacksaw blades for optimal results in your operations.
             </p><br /><br />
             <p>
-            <h3>Choosing the Best Hacksaw Blades for Your Cutting Needs</h3><br /><br />
             <ul style="line-height: 2.0em; padding-left: 25px;">
             <li><span><b>Introduction:</b></span> High-quality hacksaw blades are vital for precise cutting in industrial and commercial sectors, offering durability, efficiency, and enhanced productivity. Discover superior performance with Shree Paramhans Enterprises</li>
             <li><span><b>Materials Selection:</b></span> Choosing premium materials like high-carbon steel ensures hacksaw blades are durable and maintain sharpness, crucial for efficient cutting in industrial applications.</li>
@@ -258,7 +257,7 @@ function collapsibleProcessing() {
 function getFAQsContent(isPage) {
   return `
     <div class="fill-form-img-div" style="text-align: center; background: #eddbc4;">
-      <img alt="" loading="lazy" width="220px" height="auto" src=${
+      <img alt="" width="220px" height="auto" src=${
         isPage ? "../assets/faqs.jpg" : "assets/faqs.jpg"
       }></img>
     </div>
@@ -360,9 +359,9 @@ function createHtmlContent() {
   
     ${
       isPage && cityOrLinkName === "AboutUs"
-        ? getAboutUsContent(isPage)
+        ? getAboutUsContent(isPage, brand)
         : isPage && cityOrLinkName === "Blogs"
-        ? getBlogsContent(isPage)
+        ? getBlogsContent(isPage, brand)
         : isPage && cityOrLinkName === "FAQs"
         ? getFAQsContent(isPage)
         : `<div id="product-images" class="contact" style="background: #ffffff;">
@@ -370,7 +369,7 @@ function createHtmlContent() {
           <div class="slideshow-container">
   
             <div class="slides fade">
-              <img class="slideImg" alt="24 TPI double sided 1 inch blades in black-yellow" loading="lazy" src=${
+              <img class="slideImg" alt="24 TPI double sided 1 inch blades in black-yellow" src=${
                 isPage ? "../assets/1.jpeg" : "assets/1.jpeg"
               } height="400px">
               <div class="slides-text">
@@ -453,7 +452,7 @@ function createHtmlContent() {
             isPage ? "../assets/2.jpeg" : "assets/2.jpeg"
           } alt="Single Sided Edge" style="width:100%">
           <div class="container">
-              <h3 style="text-align: center;"><b>Single Sided Edge</b></h3>
+              <p style="text-align: center;font-size: 1.17em;"><b>Single Sided Edge</b></p>
                 <ul class="container">
                   <li>All hard low alloy blades made from high carbon steel</li>
                   <li>Oven baked paint</li>
@@ -469,7 +468,7 @@ function createHtmlContent() {
             isPage ? "../assets/1.jpeg" : "assets/1.jpeg"
           } alt="Double Sided Edge" style="width:100%">
           <div class="container">
-              <h3 style="text-align: center;"><b>Double Sided Edge</b></h3>
+              <p style="text-align: center;font-size: 1.17em;"><b>Double Sided Edge</b></p>
                 <ul class="container">
                   <li>All hard low alloy blades made from high carbon steel</li>
                   <li>Oven baked paint</li>
@@ -485,7 +484,7 @@ function createHtmlContent() {
             isPage ? "../assets/5.jpg" : "assets/5.jpg"
           } alt="Flexible Blades" style="width:100%">
           <div class="container">
-              <h3 style="text-align: center;"><b>Flexible Blades</b></h3>
+              <p style="text-align: center;font-size: 1.17em;"><b>Flexible Blades</b></p>
                 <ul class="container">
                   <li>Fully Flexible Blades</li>
                   <li>Finish - anti rust oiled blades</li>
@@ -588,14 +587,14 @@ function createHtmlContent() {
             <a id="i2tpy3" aria-label="facebook" href="https://www.facebook.com/hacksawblades" target="_blank"><img alt="facebook page link" loading="lazy" id="i3gekg" height="49px" width="49px" src=${
               isPage ? "../assets/fb.svg" : "assets/fb.svg"
             } /></a>
-            <a id="i2tpy3-5" aria-label="whatsapp" href="https://wa.me/+919416059179" target="_blank"><img alt="chat on whatsapp" loading="lazy" id="i3gekg-3" height="40px" width="40px" src=${
+            <a id="i2tpy3-5" aria-label="whatsapp" href="https://wa.me/+919416059179" target="_blank"><img alt="chat on whatsapp" loading="lazy" id="i3gekg-3" height="48px" width="40px" src=${
               isPage ? "../assets/whatsapp.svg" : "assets/whatsapp.svg"
             } /></a>
-            <a id="i2tpy3-3" aria-label="email" href="mailto:sanjaygoyal3103@gmail.com"><img alt="compose email" loading="lazy" id="i3gekg-4" height="37px" width="37px"
+            <a id="i2tpy3-3" aria-label="email" href="mailto:sanjaygoyal3103@gmail.com"><img alt="compose email" loading="lazy" id="i3gekg-4" height="48px" width="37px"
                 src=${
                   isPage ? "../assets/email.svg" : "assets/email.svg"
                 } /></a>
-            <a aria-label="mobile" href=tel:+919416059179><img alt="call" loading="lazy" id="i3gekg-5" height="37px" width="37px" src=${
+            <a aria-label="mobile" href=tel:+919416059179><img alt="call" loading="lazy" id="i3gekg-5" height="48px" width="37px" src=${
               isPage ? "../assets/tel.svg" : "assets/tel.svg"
             } /></a>
         </div>
