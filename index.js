@@ -508,7 +508,7 @@ function createHtmlContent() {
                 isPage ? "../assets/objective.png" : "assets/objective.png"
               } alt="objective" width="50px" height="50px">
               <div class="container">
-                  <h4><b>Objective</b></h4>
+                  <p><b>Objective</b></p>
                   <p>Our goal at Shree Paramhans Enterprises is to provide superior hacksaw blades crafted from High Carbon Steel, ensuring precision and durability for cutting metals, plastics, and more. Based in Bhiwani, Haryana, we serve global industries with reliable, high-performance solutions tailored to diverse cutting needs.</p>
               </div>
           </div>
@@ -519,7 +519,7 @@ function createHtmlContent() {
                   : "assets/quality_assurance.png"
               } alt="quality assurance" width="50px" height="50px">
               <div class="container">
-                  <h4><b>Quality Assurance</b></h4>
+                  <p><b>Quality Assurance</b></p>
                   <p>We uphold stringent quality assurance measures at Shree Paramhans Enterprises, ensuring our hacksaw blades meet the highest standards for precision and durability. Crafted from High Carbon Steel, our products excel in cutting metals and plastics, guaranteeing reliability for industrial and commercial applications.</p>
               </div>
           </div>
@@ -528,7 +528,7 @@ function createHtmlContent() {
                 isPage ? "../assets/clients.png" : "assets/clients.png"
               } alt="clients" width="50px" height="50px">
               <div class="container">
-                  <h4><b>Clients</b></h4>
+                  <p><b>Clients</b></p>
                   <p>Our diverse clientele at Shree Paramhans Enterprises includes industrial facilities and commercial workshops worldwide. They rely on our high-quality hacksaw blades for precision cutting of metals and plastics. We cater to global markets with efficient solutions tailored to diverse industrial needs.</p>
               </div>
           </div>
@@ -583,24 +583,24 @@ function createHtmlContent() {
               }></img>
             </div>-->
             <div>
-            <div class="igiuzk flex-div row-div">
-            <a id="i2tpy3" aria-label="facebook" href="https://www.facebook.com/hacksawblades" target="_blank"><img alt="facebook page link" loading="lazy" id="i3gekg" height="49px" width="49px" src=${
-              isPage ? "../assets/fb.svg" : "assets/fb.svg"
-            } /></a>
-            <a id="i2tpy3-5" aria-label="whatsapp" href="https://wa.me/+919416059179" target="_blank"><img alt="chat on whatsapp" loading="lazy" id="i3gekg-3" height="48px" width="40px" src=${
-              isPage ? "../assets/whatsapp.svg" : "assets/whatsapp.svg"
-            } /></a>
-            <a id="i2tpy3-3" aria-label="email" href="mailto:sanjaygoyal3103@gmail.com"><img alt="compose email" loading="lazy" id="i3gekg-4" height="48px" width="37px"
-                src=${
-                  isPage ? "../assets/email.svg" : "assets/email.svg"
+            <div class="igiuzk flex-div row-div" style="margin-bottom: 20px;">
+                <a id="i2tpy3" aria-label="facebook" href="https://www.facebook.com/hacksawblades" target="_blank"><img alt="facebook page link" loading="lazy" id="i3gekg" height="49px" width="49px" src=${
+                  isPage ? "../assets/fb.svg" : "assets/fb.svg"
                 } /></a>
-            <a aria-label="mobile" href=tel:+919416059179><img alt="call" loading="lazy" id="i3gekg-5" height="48px" width="37px" src=${
-              isPage ? "../assets/tel.svg" : "assets/tel.svg"
-            } /></a>
-        </div>
-        <a style="text-decoration: underline;" aria-label="address" href="https://www.google.com/maps/place/SHREE+PARAMHANS+ENTERPRISES/@28.805067,76.1592185,17z/data=!3m1!4b1!4m6!3m5!1s0x391266e73fd6210b:0xddf21ecc99392a1!8m2!3d28.805067!4d76.1617934!16s%2Fg%2F1ptzvnfy4?entry=ttu">
-            <span>Address: Paluwas Village, Bhiwani, Haryana 127021</span>
-        </a>
+                <a id="i2tpy3-5" aria-label="whatsapp" href="https://wa.me/+919416059179" target="_blank"><img alt="chat on whatsapp" loading="lazy" id="i3gekg-3" height="48px" width="40px" src=${
+                  isPage ? "../assets/whatsapp.svg" : "assets/whatsapp.svg"
+                } /></a>
+                <a id="i2tpy3-3" aria-label="email" href="mailto:sanjaygoyal3103@gmail.com"><img alt="compose email" loading="lazy" id="i3gekg-4" height="48px" width="37px"
+                    src=${
+                      isPage ? "../assets/email.svg" : "assets/email.svg"
+                    } /></a>
+                <a aria-label="mobile" href=tel:+919416059179><img alt="call" loading="lazy" id="i3gekg-5" height="48px" width="37px" src=${
+                  isPage ? "../assets/tel.svg" : "assets/tel.svg"
+                } /></a>
+            </div>
+            <a style="text-decoration: underline;" aria-label="address" href="https://www.google.com/maps/place/SHREE+PARAMHANS+ENTERPRISES/@28.805067,76.1592185,17z/data=!3m1!4b1!4m6!3m5!1s0x391266e73fd6210b:0xddf21ecc99392a1!8m2!3d28.805067!4d76.1617934!16s%2Fg%2F1ptzvnfy4?entry=ttu">
+                <span>Address: Paluwas Village, Bhiwani, Haryana 127021</span>
+            </a>
         </div>
         </div>
     </div>
