@@ -434,11 +434,11 @@ function createHtmlContent() {
 
     <div id="intro" class="contact" style="background: #ffffff;">
       <div class="iyohgi" style="text-align: center;">
-        <h1 class="i78bq-2-3 contact-details">Backed by Cutting Edge Technology</h1>
+        <h1 class="i78bq-2-3 contact-details">Durable Hacksaw Blades for DIY and Professional Use</h1>
         <p style="font-size: 18px;">
-        Welcome to <b>Shree Paramhans Enterprises</b>, your trusted partner in the hacksaw blades industry. With ${
+        Welcome to <b>Shree Paramhans Enterprises</b>, your trusted partner in the <b>hacksaw blades industry</b>. With ${
           new Date().getFullYear() - new Date("1998-06-20").getFullYear()
-        } years of expertise, we specialize in manufacturing high-quality <b>hacksaw blades</b> engineered for precision and durability. Our blades are crafted from <b>high carbon steel</b> to ensure superior performance in cutting metals, plastics, and more. Based in <b>Bhiwani, Haryana</b>, we serve a global clientele, providing efficient cutting solutions tailored to diverse industrial and commercial applications. Discover how our advanced <b>SPENTO hacksaw blades</b> can optimize your cutting operations and elevate productivity. Contact us today to explore our extensive range and experience the difference in quality and reliability.
+        } years of expertise, we specialize in <b>manufacturing high-quality hacksaw blades</b> engineered for <b>precision</b> and <b>durability</b>. Our blades, crafted from <b>high carbon steel</b>, ensure <b>superior performance</b> in cutting <b>metals</b>, <b>plastics</b>, and more. Based in <b>Bhiwani, Haryana</b>, we serve a global clientele, providing <b>efficient cutting solutions</b> tailored to diverse <b>industrial</b> and <b>commercial applications</b>. Discover how our advanced <b>SPENTO hacksaw blades</b> can optimize your <b>cutting operations</b> and elevate <b>productivity</b>. Contact us today to explore our extensive range of <b>premium hacksaw blades</b> and experience the difference in <b>quality</b> and <b>reliability</b>.
         </p>
       </div>
     </div>
